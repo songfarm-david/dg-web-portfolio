@@ -35,17 +35,6 @@ module.exports = {
          hostingWPCOM: false,
          verboseOutput: true,
          useACF: false
-         // ,
-       //   plugins: [
-       //    {
-       //      resolve: `gatsby-wordpress-inline-images`,
-       //      options: {
-       //        baseUrl: `peakwebsites.ca`,
-       //        protocol: `https`
-       //      }
-       //    }
-       // ],
-       // withWebp: true,
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
