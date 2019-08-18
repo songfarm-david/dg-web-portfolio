@@ -9,8 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
+import "../style/global.scss"
+
 import Header from "./header"
-import "./layout.css"
 
 const Layout = (props) => {
    const data = useStaticQuery(graphql`
@@ -22,9 +23,9 @@ const Layout = (props) => {
          }
       }
    `)
-  const { home, name, description } = data.wordpressSiteMetadata
-  console.dir(data.wordpressSiteMetadata);
-  return (
+   const { home, name, description } = data.wordpressSiteMetadata
+   console.dir(data.wordpressSiteMetadata);
+   return (
      <>
         <div id="bodyTag" className={props.className}>
            <Header name={name}/>
