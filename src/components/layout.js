@@ -14,23 +14,23 @@ import "../style/global.scss"
 import Header from "./header"
 
 const Layout = (props) => {
-   const data = useStaticQuery(graphql`
-      query SiteMetaQuery {
-         wordpressSiteMetadata {
-           home
-           name
-           description
-         }
-      }
-   `)
-   const { home, name, description } = data.wordpressSiteMetadata
-   console.dir(data.wordpressSiteMetadata);
+   // const data = useStaticQuery(graphql`
+   //    query SiteMetaQuery {
+   //       wordpressSiteMetadata {
+   //         home
+   //         name
+   //         description
+   //       }
+   //    }
+   // `)
+   // const { name, description } = data.wordpressSiteMetadata
+   // console.dir(data.wordpressSiteMetadata);
    return (
      <>
         <div id="bodyTag" className={props.className}>
-           <Header name={name}/>
+           {/*<Header name={name}/>*/}
            <main>
-              <p>{description}</p>
+              {/*<p>{description}</p>*/}
               {props.children}
            </main>
 
