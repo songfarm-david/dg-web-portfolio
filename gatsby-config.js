@@ -1,6 +1,6 @@
-require('dotenv').config({
-   path: `.env.${process.env.NODE_ENV}`
-});
+// require('dotenv').config({
+//    path: `.env.${process.env.NODE_ENV}`
+// });
 
 // function mapMoviesToGenres({ entities }) {
 //    console.log('in the func', entities);
