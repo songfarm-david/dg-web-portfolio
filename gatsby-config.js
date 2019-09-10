@@ -1,19 +1,6 @@
-// require('dotenv').config({
-//    path: `.env.${process.env.NODE_ENV}`
-// });
-
-// function mapMoviesToGenres({ entities }) {
-//    console.log('in the func', entities);
-//    return entities.map(e => {
-//       console.log(e.__type);
-//       return e;
-//    })
-// }
-
-// adding rest support for custom taxonomies
-// https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-rest-api-support-for-custom-content-types/
-// https://wordpress.stackexchange.com/questions/258102/custom-post-type-api-doesnt-show-taxonomy-or-category-array
-// https://codex.wordpress.org/Function_Reference/register_taxonomy
+require('dotenv').config({
+   path: `.env.${process.env.NODE_ENV}`
+});
 
 module.exports = {
    siteMetadata: {
@@ -28,18 +15,19 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-         baseUrl: `peakwebsites.ca`,
-         protocol: `https`,
+         baseUrl: `localhost/peak-theme/`,
+         protocol: `http`,
          hostingWPCOM: false,
          verboseOutput: true,
          useACF: false,
-         // excludedRoutes: [
-         //    '**/redirection/*',
-         //    '**/settings*',
-         //    '**/themes*',
-         //    '**/akismet/*',
-         //    '**/users*'
-         // ],
+         excludedRoutes: [
+            '**/redirection/*',
+            '**/settings*',
+            '**/themes*',
+            '**/akismet/*',
+            '**/users*',
+            '**/media'
+         ],
          // auth: {
          //    jwt_user: process.env.JWT_USER,
          //    jwt_pass: process.env.JWT_PASS,
@@ -85,3 +73,16 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
 }
+
+// adding rest support for custom taxonomies
+// https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-rest-api-support-for-custom-content-types/
+// https://wordpress.stackexchange.com/questions/258102/custom-post-type-api-doesnt-show-taxonomy-or-category-array
+// https://codex.wordpress.org/Function_Reference/register_taxonomy
+
+// function mapMoviesToGenres({ entities }) {
+//    console.log('in the func', entities);
+//    return entities.map(e => {
+//       console.log(e.__type);
+//       return e;
+//    })
+// }

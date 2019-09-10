@@ -1,9 +1,12 @@
 import React from "react"
-// import { Link } from "gatsby"
+import { graphql } from "gatsby"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 // import Image from "../components/image"
 import SEO from "../components/seo"
+
+import decodeHTML from "../functions/decode-html.js"
 
 export default ({ data }) => {
    // NOTE: add class name to body tag here
@@ -67,21 +70,36 @@ export default ({ data }) => {
          <p>Sign up for the Peak mailing list and receive insightful and fresh content for SMBs about trends on the web, in SEO, and online marketing.</p>
        </article>
 
+       <section>
+         <h3>Pages</h3>
+         {/*data.allWordpressWpPkProjects.edges.map(({ node }, index) => (
+           <div key={index}>
+            <h3>
+               <Link to={node.slug} state={{ post: node }}>
+                  {decodeHTML(node.title)}
+               </Link>
+            </h3>
+               <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+               <Link to={node.slug} state={{ post: node }}>Read more</Link>
+           </div>
+        ))*/}
+       </section>
+
      </Layout>
    )
 }
 
-// export const query = graphql`
-//    query {
-//       wordpressSiteMetadata {
-//          name
-//          description
-//          url
-//       }
-//    }
-// `
+export const query = graphql`
+   query {
+      wordpressSiteMetadata {
+         name
+         description
+         url
+      }
 
-// queries for pages and posts
+   }
+`
+
 // allWordpressPage {
 //    edges {
 //       node {
@@ -109,6 +127,13 @@ export default ({ data }) => {
 //          excerpt
 //          date
 //          content
+//       }
+//    }
+// }
+// allWordpressWpPkProjects {
+//    edges {
+//       node {
+//          title
 //       }
 //    }
 // }
