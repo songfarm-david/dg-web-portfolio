@@ -8,6 +8,12 @@ const Header = ({...props}) => (
           {props.name}
         </Link>
       </h1>
+      <nav>
+         <ul>
+            <li><Link to="/" className="">Home</Link></li>
+            <li><Link to="/projects" className="">Projects</Link></li>
+         </ul>
+      </nav>
   </header>
 )
 

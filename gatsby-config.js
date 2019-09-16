@@ -4,8 +4,8 @@ require('dotenv').config({
 
 const mapTechToProjects = ({ entities }) => {
 
-   const wp_projects = entities.filter( e => e.__type === 'wordpress__wp_projects' )
-   console.log(wp_projects)
+   // const wp_projects = entities.filter( e => e.__type === 'wordpress__wp_projects' )
+   // console.log(wp_projects)
 
    // get all custom taxonomies
    const custom_taxes = entities.filter( e => e.__type === 'wordpress__wp_tech' );
