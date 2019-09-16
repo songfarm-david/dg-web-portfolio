@@ -78,22 +78,30 @@ exports.createPages = async ({ actions, graphql }) => {
    // `)
 
    if (wp_result.errors) {
-      console.log('this is my error', result.errors)
-      throw new Error("Things broke, see console output above")
+      console.log("Things broke, see error below.")
+      throw new Error(wp_result.errors)
    } else {
 		console.log('this is my success', wp_result);
 	}
 
+   // const {
+   //    allWordpressPage,
+   //    allWordpressPost,
+   //    allWordpressWpPkProjects,
+   //    allWordpressSiteMetadata
+   // } = wp_result.data
+
    const {
       allWordpressPage,
       allWordpressPost,
-      allWordpressWpPkProjects,
       allWordpressSiteMetadata
    } = wp_result.data
 
+   console.log('log some types', wp_result.__type);
+
    // create WordPress Pages
    allWordpressPage.edges.forEach(({ node }) => {
-      console.log('status page', node.status)
+      // console.log('status page', node.status)
       if (node.status == 'publish' && node.type == 'page') {
          createPage({
             path: node.slug,
@@ -124,11 +132,11 @@ exports.createPages = async ({ actions, graphql }) => {
       }
    })
 
-   if ( !allWordpressWpPkProjects ) {
-      return;
-   }
-   allWordpressWpPkProjects.edges.forEach(({ node }) => {
-      console.log(node);
-   })
+   // if ( !allWordpressWpPkProjects ) {
+   //    return;
+   // }
+   // allWordpressWpPkProjects.edges.forEach(({ node }) => {
+   //    // console.log(node);
+   // })
 
 }
