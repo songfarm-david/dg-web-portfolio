@@ -13,35 +13,36 @@ export default ({ data }) => {
    console.log('hello data', data);
    return (
      <Layout className="">
-       <SEO title="Home" />
-       <h1>{data.wordpressSiteMetadata.name}</h1>
-
-       <section id="about-section" className="section">
-         <h2>About</h2>
-         <div id="about-content">
-            {/*quote adjective*/}
-            <p className="quote">Designer, Developer, Consultant, Webmaster, Thinker</p>
-            {/*regular paragraph text*/}
-            <p>I help SMBs take their business to the next level by offering expert support in the areas of web design & development, SEO, marketing for the web, and accessibility.</p>
-         </div>
-       </section>
+       <SEO title="Portfolio Home" />
 
        <section id="recent-projects" className="section">
          <h2>Recent Projects</h2>
-         <div className="project">
-            <h3>KetoCounter.me</h3>
-            {/* KetoCounter image here */}
-            <div className="project-links">
-            </div>
-            <p className="description">As a Progressive Web App in the health and fitness sphere, KetoCounter combines many modern build processes including asset bundling, modular components, user authentication and more to create a seamless and engaging user experience.</p>
-            <h4>Project highlights:</h4>
-            <ul>
-               <li>Highlight 1</li>
-               <li>Highlight 2</li>
-               <li>Highlight 3</li>
-               <li>Highlight 4</li>
-               <li>Highlight 5</li>
-            </ul>
+         <div className="container">
+         {
+            data.allWordpressWpProjects.edges.map(( {node}, index ) => {
+               console.log(node, index);
+               return (
+                  <>
+                     <div key={index}>
+                        <h3>{node.title}</h3>
+                        <span>{node.meta.project_date}</span>
+                        <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                        <p><Link to={node.slug} title={node.title}>Read more</Link></p>
+                        <div className="tags-container">
+                        {node.taxonomies.map((tech, index) => {
+            					if (index == node.taxonomies.length-1) {
+            						return <span key={index} className="project_tech" dangerouslySetInnerHTML={{ __html: tech.name }} />
+            					}
+            					return (
+            						<span key={index} className="project_tech" dangerouslySetInnerHTML={{ __html: tech.name + ", " }} />
+            					)
+            				})}
+                        </div>
+                     </div>
+                  </>
+               )
+            })
+         }
          </div>
        </section>
 
@@ -60,6 +61,16 @@ export default ({ data }) => {
 
        {/* image collage -- can I find an example? */}
 
+       <section id="about-section" className="section">
+         <h2>About</h2>
+         <div id="about-content">
+            {/*quote adjective*/}
+            <p className="quote">Designer, Developer, Consultant, Webmaster, Thinker</p>
+            {/*regular paragraph text*/}
+            <p>I help SMBs take their business to the next level by offering expert support in the areas of web design & development, SEO, marketing for the web, and accessibility.</p>
+         </div>
+       </section>
+
        <section id="support">
          <h2>Contact</h2>
          <p>Need help with a project? Call for a free consultation.</p>
@@ -69,21 +80,6 @@ export default ({ data }) => {
          <h3>Stay in touch!</h3>{/* find example page somewhere? */}
          <p>Sign up for the Peak mailing list and receive insightful and fresh content for SMBs about trends on the web, in SEO, and online marketing.</p>
        </article>
-
-       <section>
-         <h3>Pages</h3>
-         {/*data.allWordpressWpPkProjects.edges.map(({ node }, index) => (
-           <div key={index}>
-            <h3>
-               <Link to={node.slug} state={{ post: node }}>
-                  {decodeHTML(node.title)}
-               </Link>
-            </h3>
-               <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-               <Link to={node.slug} state={{ post: node }}>Read more</Link>
-           </div>
-        ))*/}
-       </section>
 
      </Layout>
    )
@@ -96,7 +92,24 @@ export const query = graphql`
          description
          url
       }
-
+      allWordpressWpProjects {
+         edges {
+            node {
+               wordpress_id
+               title
+               meta {
+                  project_date
+               }
+               slug
+               status
+               type
+               excerpt
+               taxonomies {
+                  name
+               }
+            }
+         }
+      }
    }
 `
 

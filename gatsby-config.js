@@ -46,11 +46,10 @@ module.exports = {
          useACF: false,
          excludedRoutes: [
             '**/redirection/*',
-            '**/settings*',
-            '**/themes*',
+            '**/settings/*',
+            '**/themes/*',
             '**/akismet/*',
-            '**/users*',
-            '**/media'
+            '**/users/*'
          ],
          normalizer: mapTechToProjects
          // auth: {

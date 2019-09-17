@@ -12,6 +12,7 @@ export default function ProjectTemplate({ data }) {
 		<Layout className="">
 			<h2>{postData.title}</h2>
 			<span>{postData.meta.project_date}</span>
+			<img src={postData.featured_media.source_url} />
 			<div dangerouslySetInnerHTML={{ __html: postData.content}}/>
 			<div>
 				{postData.taxonomies.map((tech, index) => {
@@ -38,6 +39,9 @@ export const pageQuery = graphql`
 			content
 			taxonomies {
 				name
+			}
+			featured_media {
+				source_url
 			}
 		}
 	}
