@@ -9,10 +9,8 @@ import SEO from "../components/seo"
 import decodeHTML from "../functions/decode-html.js"
 
 export default ({ data }) => {
-   // NOTE: add class name to body tag here
-   console.log('hello data', data);
    return (
-     <Layout className="">
+     <Layout>
        <SEO title="Portfolio Home" />
 
        <section id="recent-projects" className="section">
