@@ -2,4 +2,9 @@
 	--border-thin: 1px;
 	--color-mid: #444;
 	--color-lightish: #ccc;
+	--layout-color: #ccc;
+}
+
+header, footer {
+	background-color: var(--layout-color);
 }

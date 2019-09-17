@@ -1,8 +1,24 @@
-@import 'type';
-@import 'color';
+/*
+ * Global styles
+ */
 
-* + * {
-	margin-top: var(--s-2);
+* {
+	box-sizing: border-box;
+}
+
+body > div .section + .section,
+.section * + * {
+	margin-top: var(--s-1);
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+main {
+	max-width: 85%;
+	margin: 0 auto;
 }
 
 :after,:before {

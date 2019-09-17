@@ -9,9 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import "../style/global.scss"
-import "../style/sections.scss"
-
+import "../style/styles.scss"
 
 import Header from "./header"
 
@@ -29,7 +27,7 @@ const Layout = (props) => {
    // console.dir(data.wordpressSiteMetadata);
    return (
      <>
-        <div id="bodyTag" className={props.className}>
+        <div className={props.className}>
            <Header name={name}/>
            <main>
               {/*<p>{description}</p>*/}
@@ -37,7 +35,7 @@ const Layout = (props) => {
            </main>
 
            {/*<Footer slug={props.slug} />*/}
-           <footer>
+           <footer id="site-footer">
              © {new Date().getFullYear()}, Built with
              {` `}
              <a href="https://www.gatsbyjs.org">Gatsby</a>

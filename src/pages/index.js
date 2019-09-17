@@ -15,24 +15,24 @@ export default ({ data }) => {
 
        <section id="recent-projects" className="section">
          <h2>Recent Projects</h2>
-         <div className="container">
+         <div className="projects-container">
          {
             data.allWordpressWpProjects.edges.map(( {node}, index ) => {
                console.log(node, index);
                return (
                   <>
-                     <div key={index}>
-                        <h3>{node.title}</h3>
+                     <div key={index} className="project-container">
+                        <h3 className="h4">{node.title}</h3>
                         <span>{node.meta.project_date}</span>
                         <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                         <p><Link to={node.slug} title={node.title}>Read more</Link></p>
                         <div className="tags-container">
                         {node.taxonomies.map((tech, index) => {
             					if (index == node.taxonomies.length-1) {
-            						return <span key={index} className="project_tech" dangerouslySetInnerHTML={{ __html: tech.name }} />
+            						return <span key={index} className="project-tech" dangerouslySetInnerHTML={{ __html: tech.name }} />
             					}
             					return (
-            						<span key={index} className="project_tech" dangerouslySetInnerHTML={{ __html: tech.name + ", " }} />
+            						<span key={index} className="project-tech" dangerouslySetInnerHTML={{ __html: tech.name + ", " }} />
             					)
             				})}
                         </div>
@@ -46,7 +46,6 @@ export default ({ data }) => {
 
        <section id="skills" className="section">
          <h2>Skillsets</h2>
-
          <h3>WordPress and Content Management Systems</h3>
          <h3>React (Gatsby)</h3>
          <aside>
@@ -56,6 +55,10 @@ export default ({ data }) => {
          <h3>Web Accessibility</h3>
          <h3>Blogging, Copywriting, Marketing</h3>
        </section>
+
+       <article id="image-collage">
+         <strong>Image collage here!</strong>
+       </article>
 
        {/* image collage -- can I find an example? */}
 
@@ -69,12 +72,12 @@ export default ({ data }) => {
          </div>
        </section>
 
-       <section id="support">
+       <section id="support" className="section">
          <h2>Contact</h2>
          <p>Need help with a project? Call for a free consultation.</p>
        </section>
 
-       <article id="mailing-list">
+       <article id="mailing-list" className="section">
          <h3>Stay in touch!</h3>{/* find example page somewhere? */}
          <p>Sign up for the Peak mailing list and receive insightful and fresh content for SMBs about trends on the web, in SEO, and online marketing.</p>
        </article>
