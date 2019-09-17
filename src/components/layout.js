@@ -30,7 +30,7 @@ const Layout = (props) => {
         <div id="bodyTag" className={props.className}>
            <Header name={name}/>
            <main>
-              <p>{description}</p>
+              {/*<p>{description}</p>*/}
               {props.children}
            </main>
 

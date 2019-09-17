@@ -68,6 +68,12 @@ exports.createPages = async ({ actions, graphql }) => {
                   slug
                   status
                   type
+                  featured_media {
+                     source_url
+                     alt_text
+                     caption
+                     description
+                  }
                }
             }
          }
@@ -120,7 +126,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
    // create pages for Projects
    allWordpressWpProjects.edges.forEach(({ node }) => {
-      console.log('HEYJOE', node);
+      console.log(node);
       if (node.status == 'publish' && node.type == 'projects') {
          createPage({
             path: node.slug,
@@ -129,7 +135,8 @@ exports.createPages = async ({ actions, graphql }) => {
                wp_id: node.wordpress_id,
                slug: node.slug,
                title: node.title,
-               content: node.content
+               content: node.content,
+               featured_media: node.featured_media
             }
          })
       } else {
