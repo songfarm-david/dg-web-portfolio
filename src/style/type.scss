@@ -27,18 +27,34 @@ h1,h2,h3,h4 {
 	 margin: var(--s0) 0;
 }
 
-.h1,h1 {
+.h1,
+h1 {
     font-size: var(--s4);
 }
 
-.h2,h2 {
+.h2,
+h2 {
     font-size: var(--s3);
 }
 
-.h3,h3 {
+.h3,
+h3 {
     font-size: var(--s2);
 }
 
-.h4,h4 {
+.h4,
+h4 {
     font-size: var(--s1);
+}
+
+.h5,
+h5,
+p {
+	font-size: var(--s0);
+}
+
+.h6,
+h6 {
+	font-size: var(--s-1);
+
 }

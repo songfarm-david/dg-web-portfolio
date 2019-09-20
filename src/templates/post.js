@@ -1,21 +1,23 @@
 /**
  * Template for WordPress Posts
  */
- import React from "react"
- import { graphql } from "gatsby"
- import Layout from "../components/layout"
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/layout"
 
- /* helper function to decode HTML entities from WordPress feed */
- import decodeHTML from '../functions/decode-html.js'
+/* helper function to decode HTML entities from WordPress feed */
+import decodeHTML from '../functions/decode-html.js'
 
 export default function PostTemplate({ data }) {
 	console.log('post data is', data);
 	const { title, content } = data.wordpressPost
 	return (
-		<section className="section">
-			<h1>{decodeHTML(title)}</h1>
-			<div dangerouslySetInnerHTML={{ __html: (content) ? content : null}} />
-		</section>
+      <Layout>
+   		<section className="section">
+   			<h2>{decodeHTML(title)}</h2>
+   			<div dangerouslySetInnerHTML={{ __html: (content) ? content : null}} />
+   		</section>
+      </Layout>
 	)
 }
 

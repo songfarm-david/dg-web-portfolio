@@ -3,8 +3,17 @@
 	--color-mid: #444;
 	--color-lightish: #ccc;
 	--layout-color: #ccc;
+
+	--type-color: #5D6063; // charcoal grey
+	--background-color: #F9FAFB; // blu-airy white
+
+	--link-color: #5995DA;
+	--link-visited: #407FC7;
+	--link-hover: #76AEED;
+
+	--alpha-border: rgba(93, 96, 99, .1);
 }
 
 header, footer {
-	background-color: var(--layout-color);
+	background-color: inherit;
 }

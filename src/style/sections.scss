@@ -1,5 +1,7 @@
 .section {
-	border: 1px solid blue;
+	border-left: 1px solid var(--alpha-border);
+	border-right: 1px solid var(--alpha-border);
+
 	padding: var(--s-1);
 	width: 100%;
 	margin: 0 auto;
@@ -20,11 +22,28 @@
 
 	.project-container {
 
-		border: 1px solid black;
+		border: 1px solid var(--alpha-border);
 		padding: var(--s-1);
 		width: 100%;
 		min-width: 260px;
 		overflow-wrap: break-word;
+		color: var(--type-color);
+		background-color: #fff;
+
+		.project-title {
+			margin: 0;
+		}
+
+		.project-date {
+			text-align: right;
+			display: inline-block;
+		}
+
+		.project-date,
+		.read-more-link,
+		.project-tech {
+			font-size: var(--s-1);
+		}
 
 		&:not(:last-of-type) {
 			margin-right: var(--s-3);
@@ -41,14 +60,29 @@
 
 	}
 
-
-
 }
 
 /*
  * Skill tiles
  */
-.skill-container {
-	padding: var(--s-);
-	border: 1px solid black;
+#skills {
+
+	.skill-container {
+		padding: var(--s-1);
+		border: 1px solid var(--alpha-border);
+		background-color: #fff;
+		height: 100%;
+	}
+
+
+
+}
+
+.flex-parent {
+	display: flex;
+	flex-wrap: wrap;
+	.flex-item {
+		margin: 0 var(--s-1) var(--s-1) 0;
+		flex: 1 1 0px;
+	}
 }

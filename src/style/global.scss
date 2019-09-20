@@ -14,12 +14,19 @@ body > div .section + .section,
 body {
 	padding: 0;
 	margin: 0;
+	background-color: var(--background-color);
+	color: var(--type-color);
 }
 
-// main {
-// 	max-width: 85%;
-// 	margin: 0 auto;
-// }
+main {
+	margin-top: var(--s4);
+}
+
+a:link { color: var(--link-color) }
+a:visited { color: var(--link-visited) }
+a:hover,
+a:visited:hover { color: var(--link-hover) }
+
 
 :after,:before {
     box-sizing: border-box;

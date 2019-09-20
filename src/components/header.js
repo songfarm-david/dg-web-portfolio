@@ -3,7 +3,7 @@ import React from "react"
 
 const Header = ({...props}) => (
   <header id="site-header">
-      <h1>Portfolio</h1>
+      <h1 className="h3">Portfolio</h1>
       <ul>
          <li>Github</li>
          <li>Twitter</li>
