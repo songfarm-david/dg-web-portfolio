@@ -16,9 +16,16 @@ const mapTechToProjects = ({ entities }) => {
 
          if (hasTax) {
             e.taxonomies___NODE = e.tech.map(
-               l => custom_taxes.find(c => l === c.wordpress_id).id
+               l => custom_taxes.find(
+                  c => l === c.wordpress_id
+               ).id
             )
             delete e.taxonomies
+         } else {
+            // hacky fallback in case no "tags" are assigned to project
+            e.taxonomies___NODE = e.tech.map(
+               l => custom_taxes.indexOf(0).id
+            );
          }
       }
       return e
@@ -39,17 +46,17 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-         baseUrl: `localhost/peak-theme/`,
+         baseUrl: `peakwebsites.ca/`,
          protocol: `http`,
          hostingWPCOM: false,
          verboseOutput: true,
          useACF: false,
          excludedRoutes: [
-            '**/redirection/*',
-            '**/settings/*',
-            '**/themes/*',
-            '**/akismet/*',
-            '**/users/*'
+            '/redirection/**/*',
+            '/settings/*',
+            '/themes/*',
+            '/akismet/**/*',
+            '/users/*'
          ],
          normalizer: mapTechToProjects
          // auth: {

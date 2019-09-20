@@ -7,22 +7,24 @@ import Layout from "../components/layout.js"
 
 export default function ProjectTemplate({ data }) {
 	console.log(data);
-	const postData = data.wordpressWpProjects
+	const { title, meta, featured_media, content, taxonomies } = data.wordpressWpProjects
+	let label = 'Technologies used: '
 	return (
 		<Layout className="">
-			<h2>{postData.title}</h2>
-			<span>{postData.meta.project_date}</span>
-			<img src={postData.featured_media.source_url} />
-			<div dangerouslySetInnerHTML={{ __html: postData.content}}/>
-			<div>
-				{postData.taxonomies.map((tech, index) => {
-					if (index == postData.taxonomies.length-1) {
-						return <span key={index} className="project_tech" dangerouslySetInnerHTML={{ __html: tech.name }} />
+			<h2>{title}</h2>
+			<span>{meta.project_date}</span>
+			<img src={featured_media.source_url} />
+			<div dangerouslySetInnerHTML={{ __html: content}}/>
+			<div>{
+				taxonomies.map((tech, index) => {
+					if (index == taxonomies.length-1) {
+						return <span key={index} className="project_tech" dangerouslySetInnerHTML={{ __html: label + tech.name }} />
 					}
 					return (
-						<span key={index} className="project_tech" dangerouslySetInnerHTML={{ __html: tech.name + ", " }} />
+						<span key={index} className="project_tech" dangerouslySetInnerHTML={{ __html: label + tech.name + ", " }} />
 					)
-				})}
+				})
+			}
 			</div>
 		</Layout>
 

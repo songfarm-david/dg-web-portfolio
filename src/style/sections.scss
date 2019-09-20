@@ -1,30 +1,54 @@
 .section {
 	border: 1px solid blue;
 	padding: var(--s-1);
-	max-width: 1100px;
+	width: 100%;
 	margin: 0 auto;
+
+	@media (min-width: 1024px) {
+		width: 80vw;
+	}
+
 }
 
+/*
+ * Project Tiles styles
+ */
 .projects-container {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
+
 	.project-container {
+
 		border: 1px solid black;
 		padding: var(--s-1);
+		width: 100%;
+		min-width: 260px;
+		overflow-wrap: break-word;
+
+		&:not(:last-of-type) {
+			margin-right: var(--s-3);
+		}
+
 		.project-tech {
 			font-style: italic;
 		}
+
+		@media (min-width: 600px) {
+			flex: 1;
+			margin-top: 0;
+		}
+
 	}
 
-	@media (min-width: 600px) {
-		flex-wrap: nowrap;
-		.project-container {
-			margin-top: 0;
-			flex: 1 1 auto;
-			width: 33%;
-		}
-		.project-container:not(:last-of-type) {
-			margin-right: var(--s-3);
-		}
-	}
+
+
+}
+
+/*
+ * Skill tiles
+ */
+.skill-container {
+	padding: var(--s-);
+	border: 1px solid black;
 }

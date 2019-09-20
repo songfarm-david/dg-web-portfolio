@@ -14,6 +14,7 @@ exports.createPages = async ({ actions, graphql }) => {
    const pageTemplate = path.resolve('src/templates/page.js')
    const postTemplate = path.resolve('src/templates/post.js')
    const projectTemplate = path.resolve('src/templates/project.js')
+   const skillTemplate = path.resolve('src/templates/skill.js')
 
    const wp_result = await graphql(`
       {
@@ -77,6 +78,20 @@ exports.createPages = async ({ actions, graphql }) => {
                }
             }
          }
+         allWordpressWpSkills {
+            edges {
+               node {
+                  title
+                  path
+                  slug
+                  excerpt
+                  content
+                  wordpress_id
+                  status
+                  type
+               }
+            }
+         }
       }
    `)
 
@@ -89,7 +104,8 @@ exports.createPages = async ({ actions, graphql }) => {
       allWordpressPage,
       allWordpressPost,
       allWordpressSiteMetadata,
-      allWordpressWpProjects
+      allWordpressWpProjects,
+      allWordpressWpSkills
    } = wp_result.data
 
    // create WordPress Pages and Posts
@@ -143,7 +159,23 @@ exports.createPages = async ({ actions, graphql }) => {
          throw new Error('Boom goes the dynamite')
       }
    })
-
+   allWordpressWpSkills.edges.forEach(({ node}) => {
+      // console.log(node);
+      if (node.status == 'publish' && node.type == 'skills') {
+         createPage({
+            path: node.slug,
+            component: skillTemplate,
+            context: {
+               wp_id: node.wordpress_id,
+               slug: node.slug,
+               title: node.title,
+               content: node.content
+            }
+         })
+      } else {
+         throw new Error('Boom goes the dynamite')
+      }
+   })
 }
 
 // const pk_custom_post_types = await graphql(`
