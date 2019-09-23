@@ -23,17 +23,17 @@ export default ({ data }) => {
                   <>
                      {/*<Link to={node.slug} className="project-container">*/}
                         <div key={index} className="project-container">
-                           <h3 className="h5 project-title">{node.title}</h3>
-                           <span className="project-date">{node.meta.project_date}</span>
-                           <p dangerouslySetInnerHTML={{ __html: node.excerpt }} className="project-excerpt"/>
+                           <h3 className="h4 project-title">{node.title}</h3>
+                           <small className="project-date">{node.meta.project_date}</small>
+                           <div dangerouslySetInnerHTML={{ __html: node.excerpt }} className="project-excerpt"/>
                            <p className="read-more-link"><Link to={node.slug} title={node.title}>Read more</Link></p>
                            <div className="tech-container">
                            {node.taxonomies.map((tech, index) => {
                					if (index == node.taxonomies.length-1) {
-               						return <span key={index} className="project-tech" dangerouslySetInnerHTML={{ __html: tech.name }} />
+               						return <small key={index} className="project-tech" dangerouslySetInnerHTML={{ __html: tech.name }} />
                					}
                					return (
-               						<span key={index} className="project-tech" dangerouslySetInnerHTML={{ __html: tech.name + ", " }} />
+               						<small key={index} className="project-tech" dangerouslySetInnerHTML={{ __html: tech.name + ", " }} />
                					)
                				})}
                            </div>
@@ -46,7 +46,7 @@ export default ({ data }) => {
          </div>
        </section>
 
-       <section id="skills" className="section">
+       <section id="skillsets" className="section">
          <h2>Skillsets</h2>
          <div className="flex-parent">
          {
@@ -54,86 +54,101 @@ export default ({ data }) => {
                console.log(node);
                const { title, excerpt, slug } = node
                return (
-                  <>
-                     <div className="flex-item">
-                        <Link to={slug}>
-                           <div key={index} className="skill-container">
-                              <h4>{decodeHTML(title)}</h4>
-                              <p dangerouslySetInnerHTML={{ __html: (excerpt) ? excerpt : null}} />
-                           </div>
-                        </Link>
-                     </div>
-                  </>
-
+                  <article key={index} className="skill">
+                     <h4>{decodeHTML(title)}</h4>
+                     <div dangerouslySetInnerHTML={{ __html: (excerpt) ? excerpt : null}} />
+                  </article>
                )
             })
          }
          </div>
        </section>
 
-       <section className="section">
-         <h3>Skills at a Glance</h3>
+       <section id="skills" className="section">
+         <h2>Skills at a Glance</h2>
          <div className="flex-parent">
             <div className="flex-item">
-               <h4>Front-end</h4>
+               <h4>Languages</h4>
                <ul>
-                  <li>HTML/5 (7+ years)</li><li>CSS/3 (7+ years)</li>
+                  <li>HTML/5 <small>(7 yrs)</small></li>
+                  <li>CSS/3 <small>(7 yrs)</small></li>
+                  <li>JavaScript/JavaScript ES6 <small>(7 yrs)</small></li>
+                  <li>JSON <small>(6 yrs)</small></li>
+                  <li>jQuery <small>(7 yrs)</small></li>
+                  <li>PHP <small>(7 yrs)</small></li>
+                  <li>SASS/LESS <small>(5 yrs)</small></li>
                </ul>
             </div>
             <div className="flex-item">
-               <h4>Back-end</h4>
+               <h4>Frameworks</h4>
                <ul>
-                  <li>HTML/5 (7+ years)</li><li>CSS/3 (7+ years)</li>
+                  <li>ReactJS <small>(2 yrs)</small></li>
+                  <li>GatsbyJS <small>(2 yrs)</small></li>
+                  <li>Webpack <small>(2 yrs)</small></li>
+                  <li>Node.js/NPM <small>(4 yrs)</small></li>
+                  <li>Git <small>(5 yrs)</small></li>
+                  <li>Bootstrap <small>(5 yrs)</small></li>
                </ul>
             </div>
             <div className="flex-item">
                <h4>Databases</h4>
                <ul>
-                  <li>HTML/5 (7+ years)</li><li>CSS/3 (7+ years)</li>
+                  <li>GraphQL <small>(1 yr)</small></li>
+                  <li>IndexedDB <small>(2 yrs)</small></li>
+                  <li>LocalStorage <small>(2 yrs)</small></li>
+                  <li>MySQL/PHPMyAdmin <small>(5 yrs)</small></li>
                </ul>
             </div>
             <div className="flex-item">
-               <h4>DevOps</h4>
+               <h4>Methodologies</h4>
                <ul>
-                  <li>HTML/5 (7+ years)</li><li>CSS/3 (7+ years)</li>
+                  <li>REST APIs <small>(3 yrs)</small></li>
+                  <li>Modular Design <small>(3 yrs)</small></li>
+                  <li>WAI-ARIA (Web Accessibility) <small>(5 yrs)</small></li>
+                  <li>Object-Oriented Programming <small>(5 yrs)</small></li>
+                  <li>Responsive Design <small>(6 yrs)</small></li>
                </ul>
             </div>
          </div>
        </section>
 
-       <article id="image-collage">
-         <strong>Image collage here!</strong>
-       </article>
+       <article id="image-collage"></article>
 
        {/* image collage -- can I find an example? */}
 
-         <div className="flex-parent section">
+       <div id="about-contact" className="section">
 
-            <section className="flex-item">
-               <h2>About</h2>
-               <div id="about-content">
-                  {/*quote adjective*/}
-                  <p className="quote">Designer, Developer, Consultant, Webmaster, Thinker</p>
-                  {/*regular paragraph text*/}
-                  <p>I help SMBs take their business to the next level by offering expert support in the areas of web design & development, SEO, marketing for the web, and accessibility.</p>
-                  <p>At a glance: </p>
-                  <ul>
-                     <li>7+ years expertise developing for the web</li>
-                     <li>Canadian citizen</li>
-                     <li>Willing to relocate for the right opportunity</li>
-                  </ul>
-               </div>
-            </section>
+         <section id="about" className="">
+            <h2>About</h2>
+            <div id="about-content">
+               {/*quote adjective*/}
+               <p className="quote">Designer, Developer, Consultant, Webmaster, Thinker</p>
+               {/*regular paragraph text*/}
+               <p>I help SMBs take their business to the next level by offering expert support in the areas of web design & development, SEO, marketing for the web, and accessibility.</p>
+               <p>At a glance: </p>
+               <ul>
+                  <li>7+ years expertise developing for the web</li>
+                  <li>Canadian citizen</li>
+                  <li>Willing to relocate for the right opportunity</li>
+               </ul>
+            </div>
+         </section>
 
-            <section id="support" className="flex-item">
+         <div className="article-container">
+
+            <article id="support" className="">
               <h2>Contact</h2>
               <p>Need help with a project? Call for a free consultation.</p>
-            </section>
+            </article>
 
-            <article id="mailing-list" className="flex-item">
+            <article id="subscribe" className="">
               <h3>Stay in touch!</h3>{/* find example page somewhere? */}
               <p>Sign up for the Peak mailing list and receive insightful and fresh content for SMBs about trends on the web, in SEO, and online marketing.</p>
             </article>
+
+         </div>
+
+
 
          </div>
 

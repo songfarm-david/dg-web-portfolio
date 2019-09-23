@@ -1,8 +1,13 @@
 :root {
-	--line-height: var(--ratio);
-	font-size: calc(.333vw + 1em);
 
-	--ratio: 1.33;
+	--ratio: 1.25;
+	--line-height: var(--ratio);
+
+	font-size: calc(.1vw + 1em); // TODO: re-visit this
+
+	--body-font: 'Montserrat', 'Arial', sans-serif;
+	--header-font: 'EB Garamond', 'Times New Roman', serif;
+
 	--s-5: calc(var(--s-4) / var(--ratio));
 	--s-4: calc(var(--s-3) / var(--ratio));
 	--s-3: calc(var(--s-2) / var(--ratio));
@@ -19,9 +24,14 @@
 
 }
 
+html,
+body {
+	font-family: var(--header-font);
+}
+
 h1,h2,h3,h4 {
     line-height: var(--line-height);
-    // font-family: var(--font-special);
+    font-family: var(--header-font);
     font-weight: 700;
     hyphens: auto;
 	 margin: var(--s0) 0;

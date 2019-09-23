@@ -2,6 +2,10 @@
  * Global styles
  */
 
+:root {
+	--project-spacing: var(--s-1);
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -18,9 +22,9 @@ body {
 	color: var(--type-color);
 }
 
-main {
-	margin-top: var(--s4);
-}
+// main {
+// 	margin-top: var(--s4);
+// }
 
 a:link { color: var(--link-color) }
 a:visited { color: var(--link-visited) }

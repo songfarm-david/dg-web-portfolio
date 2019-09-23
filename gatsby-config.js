@@ -78,6 +78,20 @@ module.exports = {
         // ]
       }
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+         fonts: [
+            {
+               family: 'Montserrat',
+               variants: ['400']
+            },
+            {
+               family: 'EB Garamond'
+            }
+         ],
+      },
+    },
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {

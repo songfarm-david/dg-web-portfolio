@@ -142,7 +142,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
    // create pages for Projects
    allWordpressWpProjects.edges.forEach(({ node }) => {
-      console.log(node);
+      // console.log(node);
       if (node.status == 'publish' && node.type == 'projects') {
          createPage({
             path: node.slug,
@@ -177,21 +177,3 @@ exports.createPages = async ({ actions, graphql }) => {
       }
    })
 }
-
-// const pk_custom_post_types = await graphql(`
-//    allWordpressWpPkProjects {
-//       edges {
-//          node {
-//             format
-//             link
-//             path
-//             slug
-//             status
-//             template
-//             title
-//             type
-//             wordpress_id
-//          }
-//       }
-//    }
-// `)

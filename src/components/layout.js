@@ -24,24 +24,21 @@ const Layout = (props) => {
       }
    `)
    const { home, name, description } = data.wordpressSiteMetadata
-   // console.dir(data.wordpressSiteMetadata);
    return (
      <>
         <div className={props.className}>
+
            <Header name={name}/>
            <main>
-              {/*<p>{description}</p>*/}
               {props.children}
            </main>
 
-           {/*<Footer slug={props.slug} />*/}
            <footer id="site-footer">
-             © {new Date().getFullYear()}, Built with
+             <small>© {new Date().getFullYear()}, Built with
              {` `}
-             <a href="https://www.gatsbyjs.org">Gatsby</a>
+             <a href="https://www.gatsbyjs.org">Gatsby</a></small>
            </footer>
 
-           {/*<Modal path={path}/>*/}
         </div>
      </>
   )
