@@ -21,7 +21,7 @@
 		background-color: #fff;
 
 		.project-title {
-			margin: 0;
+			margin-bottom: 0;
 		}
 
 		.project-date {
@@ -29,25 +29,17 @@
 			display: inline-block;
 			font-family: var(--header-font);
 			font-style: italic;
-			// font-size: var(--s-1);
 			margin-top: var(--s-4);
-		}
-
-		.project-excerpt p {
-			// font-size: var(--s0);
-		}
-
-		.project-tech {
-			// font-size: var(--s-1);
 		}
 
 		.tech-container {
 			margin-bottom: var(--s2);
+			.project-tech {
+				font-style: italic;
+			}
 		}
 
-		.project-tech {
-			font-style: italic;
-		}
+
 
 	}
 
@@ -119,56 +111,12 @@
 	}
 }
 
-#about-contact {
-
-	overflow: hidden;
-
-	> section,
-	> article {
-		padding: var(--s-1);
-		margin: 0 var(--s-1) var(--s-1) 0;
-	}
-
-	.article-container {
-		// background-color: #ccc;
-	}
-
-	#about {
-		float: left;
-		width: 50%;
-		// background-color: var(--gun-metal-blue);
-		// color: var(--background-color);
-		// margin-right: var(--s1);
-	}
-
-	article {
-		margin-left: auto;
-		width: 50%;
-	}
-
-	// &.flex-parent {
-	// 	display: flex;
-	// 	flex-wrap: wrap;
-	// 	align-items: flex-start;
-	// 	justify-content: flex-end;
-	// 	.flex-item:first-child {
-	// 		flex: 49%;
-	// 		border: 1px solid green;
-	// 	}
-	// 	.flex-item:not(:first-child) {
-	// 		flex: 49%;
-	// 		border: 1px solid red;
-	// 	}
-	// 	.flex-item {
-	//
-	// 	}
-	//
-	// }
-
+#about {
+	
 }
 
 #image-collage {
-	height: 360px;
+	height: 420px;
 	width: 100%;
-	background-color: #676d87;
+	background-color: #333;
 }

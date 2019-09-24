@@ -29,7 +29,7 @@ export default ({ data }) => {
                            <p className="read-more-link"><Link to={node.slug} title={node.title}>Read more</Link></p>
                            <div className="tech-container">
                            {node.taxonomies.map((tech, index) => {
-               					if (index == node.taxonomies.length-1) {
+               					if (index === node.taxonomies.length-1) {
                						return <small key={index} className="project-tech" dangerouslySetInnerHTML={{ __html: tech.name }} />
                					}
                					return (
@@ -82,6 +82,7 @@ export default ({ data }) => {
             <div className="flex-item">
                <h4>Frameworks</h4>
                <ul>
+                  <li>WordPress REST API <small>(1 yr)</small></li>
                   <li>ReactJS <small>(2 yrs)</small></li>
                   <li>GatsbyJS <small>(2 yrs)</small></li>
                   <li>Webpack <small>(2 yrs)</small></li>
@@ -114,27 +115,20 @@ export default ({ data }) => {
 
        <article id="image-collage"></article>
 
-       {/* image collage -- can I find an example? */}
 
-       <div id="about-contact" className="section">
-
-         <section id="about" className="">
+      <section id="about" className="">
+         <div className="section">
             <h2>About</h2>
-            <div id="about-content">
-               {/*quote adjective*/}
-               <p className="quote">Designer, Developer, Consultant, Webmaster, Thinker</p>
-               {/*regular paragraph text*/}
-               <p>I help SMBs take their business to the next level by offering expert support in the areas of web design & development, SEO, marketing for the web, and accessibility.</p>
-               <p>At a glance: </p>
-               <ul>
-                  <li>7+ years expertise developing for the web</li>
-                  <li>Canadian citizen</li>
-                  <li>Willing to relocate for the right opportunity</li>
-               </ul>
+            <p>Full-stack developer with 7+ years of strong experience in web development, UI/UX, and web accessibility with a desire to learn and master responsive design and optimal user experience. Excellent communication skills and attention to detail.</p>
+            <div>
+               <h3>Get in touch</h3>
+               <p>Call or email me, or visit my profiles online:</p>
+               <div></div>
             </div>
-         </section>
+         </div>
+      </section>
 
-         <div className="article-container">
+         {/*<div className="article-container">
 
             <article id="support" className="">
               <h2>Contact</h2>
@@ -142,15 +136,11 @@ export default ({ data }) => {
             </article>
 
             <article id="subscribe" className="">
-              <h3>Stay in touch!</h3>{/* find example page somewhere? */}
+              <h3>Stay in touch!</h3>
               <p>Sign up for the Peak mailing list and receive insightful and fresh content for SMBs about trends on the web, in SEO, and online marketing.</p>
             </article>
 
-         </div>
-
-
-
-         </div>
+         </div>*/}
 
      </Layout>
    )
@@ -163,10 +153,11 @@ export const query = graphql`
          description
          url
       }
-      allWordpressWpProjects {
+      allWordpressWpProjects(sort: {fields: date, order: DESC}) {
          edges {
             node {
                wordpress_id
+               date
                title
                meta {
                   project_date
@@ -192,41 +183,3 @@ export const query = graphql`
       }
    }
 `
-
-// allWordpressPage {
-//    edges {
-//       node {
-//          title
-//          status
-//          excerpt
-//          slug
-//          type
-//          wordpress_id
-//          id
-//       }
-//    }
-// }
-// allWordpressPost {
-//    edges {
-//       node {
-//          slug
-//          title
-//          wordpress_id
-//          type
-//          status
-//          path
-//          modified
-//          format
-//          excerpt
-//          date
-//          content
-//       }
-//    }
-// }
-// allWordpressWpPkProjects {
-//    edges {
-//       node {
-//          title
-//       }
-//    }
-// }
