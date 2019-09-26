@@ -13,6 +13,18 @@ export default ({ data }) => {
      <Layout>
        <SEO title="Portfolio Home" />
 
+       <section id="about" className="">
+          <div className="section">
+             <h2 className="screen-reader-only">About</h2>
+             <p>Full-stack developer with 7+ years of strong experience in web development, UI/UX, and web accessibility with a desire to learn and master responsive design, modular design, and optimal user experience.</p>
+             {/*<div>
+                <h3>Get in touch</h3>
+                <p>Call or email me, or visit my profiles online:</p>
+                <div></div>
+             </div>*/}
+          </div>
+       </section>
+
        <section id="recent-projects" className="section">
          <h2>Recent Projects</h2>
          <div className="projects-container">
@@ -116,17 +128,7 @@ export default ({ data }) => {
        <article id="image-collage"></article>
 
 
-      <section id="about" className="">
-         <div className="section">
-            <h2>About</h2>
-            <p>Full-stack developer with 7+ years of strong experience in web development, UI/UX, and web accessibility with a desire to learn and master responsive design and optimal user experience. Excellent communication skills and attention to detail.</p>
-            <div>
-               <h3>Get in touch</h3>
-               <p>Call or email me, or visit my profiles online:</p>
-               <div></div>
-            </div>
-         </div>
-      </section>
+
 
          {/*<div className="article-container">
 

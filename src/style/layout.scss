@@ -23,18 +23,12 @@ header#site-header {
 		margin: 0;
 	}
 
-	h1, ul {
+	h1 {
 		display: inline-block;
 		line-height: inherit;
 	}
 
-	ul {
-		list-style: none;
-		li {
-			display: inline-block;
-			line-height: inherit;
-		}
-	}
+
 
 	@media (min-width: $mobile-breakpoint) {
 		position: fixed;
