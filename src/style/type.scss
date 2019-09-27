@@ -14,6 +14,7 @@
 	--s-2: calc(var(--s-1) / var(--ratio));
 	--s-1: calc(var(--s0) / var(--ratio));
 	--s0: 1rem;
+	--negative-project-spacing: -1rem;
 	--s1: calc(var(--s0) * var(--ratio));
 	--s2: calc(var(--s1) * var(--ratio));
 	--s3: calc(var(--s2) * var(--ratio));

@@ -1,0 +1,73 @@
+@import '../breakpoints.scss';
+
+// TODO: import 'section-tiles' styles
+.section-container {
+
+	// NOTE: this could be a global class applied to all 'tiles'
+	.section-item {
+
+		border: 1px solid var(--alpha-border);
+		background-color: var(--white-color);
+		color: var(--type-color);
+		padding: var(--project-spacing);
+		overflow-wrap: break-word;
+
+		.heading {
+			margin-bottom: var(--s-4);
+		}
+
+		.date {
+			font-family: var(--header-font);
+			font-style: italic;
+			margin-top: var(--s-4);
+			font-size: var(--s-1);
+		}
+
+		.main-description { }
+
+		.sub-section {
+			padding-right: var(--s2);
+			font-style: italic;
+		}
+
+		.cta {
+			font-size: var(--s-1);
+		}
+
+	}
+
+}
+
+.flex-parent {
+	display: flex;
+	flex-flow: row wrap;
+	.flex-item {
+		width: 100%;
+	}
+	@media (min-width: $mobile-breakpoint) {
+		.flex-item {
+			width: 45%;
+			flex: 1 1 auto;
+			margin-bottom: var(--project-spacing);
+			&:nth-child(even) {
+				margin-left: var(--project-spacing);
+			}
+			+ .flex-item {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+#projects,
+#skillsets,
+#skills {
+
+	@media (min-width: $mobile-breakpoint) {
+		.section-item {
+			width: 45%;
+		}
+	}
+
+
+}

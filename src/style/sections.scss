@@ -1,119 +1,125 @@
+/*
+ * About
+ */
+// #about {
+// 	background-color: var(--gun-metal-blue);
+// 	color: var(--white-color);
+// 	border: none;
+// }
 
+// $tablet-breakpoint: 600px;
 
 /*
  * Recent Projects
  */
-#recent-projects .projects-container {
-
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: flex-start;
-
-	.project-container {
-
-		border: 1px solid var(--alpha-border);
-		padding: var(--s-1);
-		width: 100%;
-		min-width: 260px;
-		overflow-wrap: break-word;
-		color: var(--type-color);
-		background-color: #fff;
-
-		.project-title {
-			margin-bottom: 0;
-		}
-
-		.project-date {
-			text-align: right;
-			display: inline-block;
-			font-family: var(--header-font);
-			font-style: italic;
-			margin-top: var(--s-4);
-		}
-
-		.tech-container {
-			margin-bottom: var(--s2);
-			.project-tech {
-				font-style: italic;
-			}
-		}
-
-
-
-	}
-
-	@media (min-width: 600px) {
-		.project-container + .project-container {
-			margin-left: var(--project-spacing);
-		}
-	}
-
-}
+// #recent-projects .projects-container {
+//
+// 	// display: flex;
+// 	// flex-wrap: wrap;
+// 	// justify-content: space-between;
+// 	// align-items: flex-start;
+//
+// 	.project-container {
+//
+// 		border: 1px solid var(--alpha-border);
+// 		padding: var(--project-spacing);
+// 		// width: 100%;
+// 		// min-width: 260px;
+// 		overflow-wrap: break-word;
+// 		color: var(--type-color);
+// 		background-color: #fff;
+//
+// 		// .project-title {
+// 		// 	margin-bottom: 0;
+// 		// }
+//
+// 		// .project-date {
+// 		// 	margin-left: auto;
+// 		// 	display: inline;
+// 		// 	font-family: var(--header-font);
+// 		// 	font-style: italic;
+// 		// 	margin-top: var(--s-4);
+// 		// }
+//
+// 		// .tech-container {
+// 		// 	margin-bottom: var(--s2);
+// 		// 	.project-tech {
+// 		// 		font-style: italic;
+// 		// 	}
+// 		// }
+//
+// 	}
+//
+// 	// @media (max-width: 600px) {
+// 	// 	.project-container + .project-container {
+// 	// 		margin-left: var(--project-spacing);
+// 	// 	}
+// 	// }
+//
+// }
 
 /*
  * Skill tiles
  */
-#skillsets {
-
-	article.skill {
-		padding: var(--s-1);
-		border: 1px solid var(--alpha-border);
-		background-color: #fff;
-		// height: 100%;
-		font-family: var(--header-font);
-		font-style: italic;
-	}
-
-	.flex-parent {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: stretch;
-		.skill {
-			margin: 0 0 var(--s-1) 0;
-			flex: 2 1 30%;
-		}
-	}
-
-	@media (min-width: $mobile-breakpoint) {
-		.skill + .skill {
-			margin-left: var(--project-spacing);
-		}
-	}
-
-}
+// #skillsets-TEST {
+//
+// 	article.skill {
+// 		padding: var(--project-spacing);
+// 		border: 1px solid var(--alpha-border);
+// 		background-color: #fff;
+// 		// height: 100%;
+// 		font-family: var(--header-font);
+// 		font-style: italic;
+// 	}
+//
+// 	.flex-parent {
+// 		display: flex;
+// 		flex-wrap: wrap;
+// 		align-items: stretch;
+// 		.skill {
+// 			// margin: 0 var(--project-spacing) var(--project-spacing) 0;
+// 			flex: 1 1 100%;
+// 			// &:last-child {
+// 			// 	margin-right: 0;
+// 			// }
+// 		}
+// 	}
+//
+// 	@media (min-width: $tablet-breakpoint) {
+// 		.flex-parent {
+// 			flex-wrap: wrap;
+// 		}
+// 		.skill {
+// 			flex: 1 1 33%;
+// 			margin-top: 0;
+// 			margin-bottom: var(--project-spacing)
+// 		}
+// 		.skill:nth-child(odd) {
+// 			margin-right: var(--project-spacing);
+// 		}
+// 	}
+//
+// }
 
 /*
  * Skills at a glance
  */
-#skills {
-
-	ul {
-		padding-left: var(--s0);
-		li {
-			margin-top: 0;
-		}
-	}
-
-	.flex-parent {
-		display: flex;
-		flex-wrap: wrap;
-		.flex-item {
-			flex: 2 1 30%;
-			background-color: var(--white-color);
-			border: 1px solid var(--alpha-border);
-			margin-bottom: var(--project-spacing);
-			padding: var(--project-spacing);
-			& + .flex-item {
-				margin-top: 0;
-			}
-		}
-	}
-}
-
-#about {
-	
-}
+// #skills-TEST {
+//
+// 	.skill-group {
+// 		background-color: var(--white-color);
+// 		border: 1px solid var(--alpha-border);
+// 		margin-bottom: var(--project-spacing);
+// 		padding: var(--project-spacing);
+// 	}
+// 	ul {
+// 		padding-left: var(--s0);
+// 		li {
+// 			margin-top: 0;
+// 		}
+// 	}
+//
+// }
 
 #image-collage {
 	height: 420px;

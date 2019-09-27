@@ -3,54 +3,53 @@ import { graphql } from "gatsby"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-// import Image from "../components/image"
 import SEO from "../components/seo"
 
 import decodeHTML from "../functions/decode-html.js"
+
+import '../style/sections/projects.scss'
 
 export default ({ data }) => {
    return (
      <Layout>
        <SEO title="Portfolio Home" />
 
-       <section id="about" className="">
-          <div className="section">
-             <h2 className="screen-reader-only">About</h2>
-             <p>Full-stack developer with 7+ years of strong experience in web development, UI/UX, and web accessibility with a desire to learn and master responsive design, modular design, and optimal user experience.</p>
-             {/*<div>
-                <h3>Get in touch</h3>
-                <p>Call or email me, or visit my profiles online:</p>
-                <div></div>
-             </div>*/}
+       <section id="about" className="section" hidden>
+          <div className="">
+             <h2 className="">About</h2>
+             <p>Full-stack developer of 7 years with solid experience in web development, UI/UX, and web accessibility with a desire to learn and master React, responsive design, modular design, and optimal user experience.</p>
+             <p>Capable web designer of 7+ years with solid experience in full-stack development, ..., ...</p>
+             <p>Get in touch with by <a href="mailto:david@peakwebsites.ca" title="">email</a>, or visit me online:</p>
+             <p className="about__social-link"><span className="screen-reader-only">Github</span></p>
+             <p className="about__social-link"><span className="screen-reader-only">Stack Overflow</span></p>
+             <p className="about__social-link"><span className="screen-reader-only">Twitter</span></p>
           </div>
        </section>
 
-       <section id="recent-projects" className="section">
+       <section id="projects" className="section" hidden>
          <h2>Recent Projects</h2>
-         <div className="projects-container">
+         <div className="section-container flex-parent">
          {
-            data.allWordpressWpProjects.edges.map(( {node}, index ) => {
-               console.log(node, index);
+            data.allWordpressWpProjects.edges.map(({ node }, index ) => {
                return (
                   <>
-                     {/*<Link to={node.slug} className="project-container">*/}
-                        <div key={index} className="project-container">
-                           <h3 className="h4 project-title">{node.title}</h3>
-                           <small className="project-date">{node.meta.project_date}</small>
-                           <div dangerouslySetInnerHTML={{ __html: node.excerpt }} className="project-excerpt"/>
-                           <p className="read-more-link"><Link to={node.slug} title={node.title}>Read more</Link></p>
-                           <div className="tech-container">
-                           {node.taxonomies.map((tech, index) => {
-               					if (index === node.taxonomies.length-1) {
-               						return <small key={index} className="project-tech" dangerouslySetInnerHTML={{ __html: tech.name }} />
-               					}
-               					return (
-               						<small key={index} className="project-tech" dangerouslySetInnerHTML={{ __html: tech.name + ", " }} />
-               					)
-               				})}
-                           </div>
+                     <div key={index} className="section-item flex-item">
+                        <h3 className="heading h4">{node.title}</h3>
+                        <small className="date">{node.meta.project_date}</small>
+                        <div dangerouslySetInnerHTML={{ __html: node.excerpt }} className="main-description"/>
+
+                        <div className="sub-section">
+                        {node.taxonomies.map((tech, index) => {
+            					if (index === node.taxonomies.length-1) {
+            						return <small key={index} className="project-tech" dangerouslySetInnerHTML={{ __html: tech.name }} />
+            					}
+            					return (
+            						<small key={index} className="project-tech" dangerouslySetInnerHTML={{ __html: tech.name + ", " }} />
+            					)
+            				})}
                         </div>
-                     {/*</Link>*/}
+                        <p className="cta read-more-link"><Link to={node.slug} title={node.title}>Read more</Link></p>
+                     </div>
                   </>
                )
             })
@@ -58,17 +57,16 @@ export default ({ data }) => {
          </div>
        </section>
 
-       <section id="skillsets" className="section">
+       <section id="skillsets" className="section" hidden>
          <h2>Skillsets</h2>
-         <div className="flex-parent">
+         <div className="section-container flex-parent">
          {
             data.allWordpressWpSkills.edges.map(( {node}, index ) => {
-               console.log(node);
-               const { title, excerpt, slug } = node
+               const { title, excerpt } = node
                return (
-                  <article key={index} className="skill">
-                     <h4>{decodeHTML(title)}</h4>
-                     <div dangerouslySetInnerHTML={{ __html: (excerpt) ? excerpt : null}} />
+                  <article key={index} className="section-item flex-item">
+                     <h4 className="heading">{decodeHTML(title)}</h4>
+                     <div className="main-description" dangerouslySetInnerHTML={{ __html: (excerpt) ? excerpt : null}} />
                   </article>
                )
             })
@@ -78,8 +76,8 @@ export default ({ data }) => {
 
        <section id="skills" className="section">
          <h2>Skills at a Glance</h2>
-         <div className="flex-parent">
-            <div className="flex-item">
+         <div className="section-container flex-parent">
+            <div className="flex-item section-item">
                <h4>Languages</h4>
                <ul>
                   <li>HTML/5 <small>(7 yrs)</small></li>
@@ -91,7 +89,7 @@ export default ({ data }) => {
                   <li>SASS/LESS <small>(5 yrs)</small></li>
                </ul>
             </div>
-            <div className="flex-item">
+            <div className="flex-item section-item">
                <h4>Frameworks</h4>
                <ul>
                   <li>WordPress REST API <small>(1 yr)</small></li>
@@ -103,7 +101,7 @@ export default ({ data }) => {
                   <li>Bootstrap <small>(5 yrs)</small></li>
                </ul>
             </div>
-            <div className="flex-item">
+            <div className="flex-item section-item">
                <h4>Databases</h4>
                <ul>
                   <li>GraphQL <small>(1 yr)</small></li>
@@ -112,7 +110,7 @@ export default ({ data }) => {
                   <li>MySQL/PHPMyAdmin <small>(5 yrs)</small></li>
                </ul>
             </div>
-            <div className="flex-item">
+            <div className="flex-item section-item">
                <h4>Methodologies</h4>
                <ul>
                   <li>REST APIs <small>(3 yrs)</small></li>

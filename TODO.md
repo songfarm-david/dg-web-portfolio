@@ -1,6 +1,10 @@
 
 # TODO
+* add project links in 'Recent Projects' section
+* test deploy on netlify
+* update field on cyber coders
 
+# full theme notes (finalized version)
 * add 'skip to main content' link
 * create and test 404 page (make sure it returns a 404)
 * Add an ‘updated’ element to blog posts, so originally they would show the publish date and any updates would update this new ‘update’ notification.
