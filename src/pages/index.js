@@ -66,13 +66,13 @@ export default ({ data }) => {
 
                         <div dangerouslySetInnerHTML={{ __html: node.excerpt }} className="main-description"/>
 
-                        <a href={node.site_url} title="Go to site URL" className="project-link">
+                        <a href={node.meta.site_url} title="Go to site URL" className="project-link">
                            <FontAwesomeIcon fixedWidth size="1x" icon={faLink} />
                         </a>
-                        <a href={node.github_repo} title="See Github Repo" className="project-link">
+                        <a href={node.meta.github_repo} title="See Github Repo" className="project-link">
                            <FontAwesomeIcon fixedWidth size="1x" icon={faGithub} />
                         </a>
-                        
+
                         <div className="sub-section">
                         {node.taxonomies.map((tech, index) => {
             					if (index === node.taxonomies.length-1) {
