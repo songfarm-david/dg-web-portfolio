@@ -86,7 +86,7 @@ module.exports = {
                family: 'EB Garamond'
             },
             {
-               family: 'Work Sans',
+               family: 'Heebo',
                variants: ['100','200','300']
             }
          ],

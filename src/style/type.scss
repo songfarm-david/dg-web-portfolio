@@ -5,7 +5,7 @@
 
 	font-size: calc(.1vw + 1em); // TODO: re-visit this
 
-	--body-font: 'Work Sans', 'Arial', sans-serif;
+	--body-font: 'Heebo', 'Arial', sans-serif;
 	--header-font: 'EB Garamond', 'Times New Roman', serif;
 
 	--s-5: calc(var(--s-4) / var(--ratio));
@@ -22,7 +22,7 @@
 	--s5: calc(var(--s4) * var(--ratio));
 
 	// Vertical spacing article (comprehensive): https://every-layout.dev/layouts/stack/
-	--second-ratio: 1.333;
+	--second-ratio: 1.4;
 	--sec-line-height: var(--second-ratio);
 	--sec-5: calc(var(--sec-4) / var(--second-ratio));
 	--sec-4: calc(var(--sec-3) / var(--second-ratio));
@@ -59,6 +59,7 @@ h1 {
 .h2,
 h2 {
     font-size: var(--s3);
+	 font-weight: initial;
 }
 
 .h3,

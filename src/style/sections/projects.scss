@@ -23,9 +23,24 @@
 			font-size: var(--s-1);
 		}
 
-		.main-description {
-			// font-family: var(--body-font);
-			// font-weight: 300;
+		// .main-description {
+		// 	font-family: var(--body-font);
+		// 	font-size: var(--s-1);
+		// 	p {
+		// 		font-size: inherit;
+		// 	}
+		// }
+
+		.project-link {
+			color: var(--hero-color);
+			padding: var(--s-5);
+			* {
+				color: inherit;
+			}
+			&:hover {
+				cursor: pointer;
+				color: var(--background-color-darker);
+			}
 		}
 
 		.sub-section {
@@ -35,6 +50,7 @@
 
 		.cta {
 			font-size: var(--s-1);
+			color: var(--hero-color);
 		}
 
 	}

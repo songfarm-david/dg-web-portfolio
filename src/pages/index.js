@@ -2,6 +2,10 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPhone, faEnvelope, faLink } from '@fortawesome/free-solid-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -53,13 +57,22 @@ export default ({ data }) => {
          <div className="section-container flex-parent">
          {
             data.allWordpressWpProjects.edges.map(({ node }, index ) => {
+               console.log(node);
                return (
                   <>
                      <div key={index} className="section-item flex-item">
                         <h3 className="heading h4">{node.title}</h3>
                         <small className="date">{node.meta.project_date}</small>
+
                         <div dangerouslySetInnerHTML={{ __html: node.excerpt }} className="main-description"/>
 
+                        <a href={node.site_url} title="Go to site URL" className="project-link">
+                           <FontAwesomeIcon fixedWidth size="1x" icon={faLink} />
+                        </a>
+                        <a href={node.github_repo} title="See Github Repo" className="project-link">
+                           <FontAwesomeIcon fixedWidth size="1x" icon={faGithub} />
+                        </a>
+                        
                         <div className="sub-section">
                         {node.taxonomies.map((tech, index) => {
             					if (index === node.taxonomies.length-1) {
@@ -145,12 +158,20 @@ export default ({ data }) => {
          </div>
        </section>
 
-       <section className="banner">
+       <section className="banner banner-small">
          <div className="section">
-            <h2 className="heading">Get in touch</h2>
-            <p>I'm looking for a great fit with an employer who has vision and a cause.</p>
-            <p>I'm available for 20-25 a week to start and prefer to work remotely.</p>
-            <p>Reach me by phone at <a href="tel:+17785879220">1-778-587-9220</a> or <a href="mailto:david@peakwebsites.ca">email me</a>.</p>
+            <h2 className="heading">I'm looking for a fit</h2>
+            <p>I'm exciting to be part of a team that is open-minded and forward-thinking employer.</p>
+            <p>I'm available for 20-25 hours a week to start and prefer to work mostly remotely.</p>
+            <p>Get in touch with me if you think I can help with your vision.</p>
+            <div className="cta-container">
+            <a href="tel:+17785879220" title="Call me" className="button">
+               <FontAwesomeIcon fixedWidth size="1x" icon={faPhone} />&nbsp;+1 (778) 587-9220
+            </a>
+            <a href="mailto:david@peakwebsites.ca" title="Email me" className="button">
+               <FontAwesomeIcon fixedWidth size="1x" icon={faEnvelope} />&nbsp;Email me
+            </a>
+            </div>
          </div>
        </section>
 
@@ -192,6 +213,8 @@ export const query = graphql`
                title
                meta {
                   project_date
+                  site_url
+                  github_repo
                }
                slug
                status

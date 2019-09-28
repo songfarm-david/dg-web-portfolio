@@ -6,10 +6,10 @@
 	box-sizing: border-box;
 }
 
-a:link { color: var(--link-color) }
-a:visited { color: var(--link-visited) }
+a:link { color: var(--hero-color) }
+a:visited { color: var(--background-color-dark) }
 a:hover,
-a:visited:hover { color: var(--link-hover) }
+a:visited:hover { color: var(--background-color-darker) }
 
 /* screen reader class */
 .screen-reader-only {
