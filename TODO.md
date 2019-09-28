@@ -13,3 +13,7 @@
 * Add a link to Peak Websites messenger (see Page) or to a Peak Websites What’s App profile.
 * Research and Include a section on the site about Cookies
 * Add an accessibility guide to the site (Talk about what makes my site accessibility and how to get the most out of it). Link to Chrome's Screen Reader, [ChromeVox](https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en)
+
+## Presentation
+### Topbar (Header)
+* make top bar sans-serif font, include just name, role, phone-number, email on all devices

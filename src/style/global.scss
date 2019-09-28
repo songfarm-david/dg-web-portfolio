@@ -2,29 +2,9 @@
  * Global styles
  */
 
-:root {
-	--project-spacing: var(--s0);
-}
-
 * {
 	box-sizing: border-box;
 }
-
-body > div .section + .section,
-.section * + * {
-	margin-top: var(--s-1);
-}
-
-body {
-	padding: 0;
-	margin: 0;
-	background-color: var(--background-color);
-	color: var(--type-color);
-}
-
-// main {
-// 	margin-top: var(--s4);
-// }
 
 a:link { color: var(--link-color) }
 a:visited { color: var(--link-visited) }

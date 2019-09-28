@@ -83,11 +83,11 @@ module.exports = {
       options: {
          fonts: [
             {
-               family: 'Montserrat',
-               variants: ['400']
+               family: 'EB Garamond'
             },
             {
-               family: 'EB Garamond'
+               family: 'Work Sans',
+               variants: ['100','200','300']
             }
          ],
       },

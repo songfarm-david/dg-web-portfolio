@@ -14,19 +14,41 @@ export default ({ data }) => {
      <Layout>
        <SEO title="Portfolio Home" />
 
-       <section id="about" className="section" hidden>
-          <div className="">
-             <h2 className="">About</h2>
+       <section id="about" className="banner">
+          <div className="section">
+             <h2 className="screen-reader-only">About</h2>
+             <p>Hi, I'm David (but you can call me Dave).</p>
+             <p>I'm a creative problem-solver and full stack developer with a knack for application development, UX, and growth optimization.</p>
+             {/*<p>I'm looking for new, exciting opportunities to help make an impact.</p>*/}
+             <p>Take a look around and get in touch with me if you think I might be able to help with your vision.</p>
+
+             {/*<p>I'm kind of an introvert. People fascinate me. I like to draw, cook, work out, and play guitar.</p>*/}
+             {/*<p>I'm excited to take on new projects and responsibilities and am looking to find an employer who takes risks and has a vision for a better tomorrow.</p>
+             <p>If you think we might be a match, then please get in touch with by phone at or email me directly.</p>
+             <p>Thanks for visiting!</p>*/}
+             {/*<p>I'm a reliable and competent full-stack developer whose excited to work for an employer who isn't afraid to take risks and has a vision for a better tomorrow.</p>
+             <p>I'm comfortable with most modern build tools, front-end languages, and frameworks, and when I don't know a language directly, I find I'm pretty good at picking it up!</p>
+             <p>I'm also knowledgeable on the importance of good user-experience and accessibility, and skilled with responsive web design.</p>
+             <p>I'm looking for fruitful partnerships (read: employment) with those who aren't afraid to take risks and have a vision for a better world. Is that too much to ask? (coy)</p>
+             <p>If you think we'd be a good fit then please get in touch with by phone at or email me directly.</p>
+             <p>Thanks for visiting!</p>*/}
+
+             {/*<p>Hi, I'm David. I'm a creatfull-stack developer with over 7 years experience developing web applications.<p>
+             <p>I believe in doing honest work and
+             I believe in working with integrity and solving problems with creativity.
+
+             <p>If you think I'm a match for your what you have in mind, then please contact me directly by phone at <a href="tel:+17785879220">1-778-587-9220</a> or by email</p>
+
              <p>Full-stack developer of 7 years with solid experience in web development, UI/UX, and web accessibility with a desire to learn and master React, responsive design, modular design, and optimal user experience.</p>
              <p>Capable web designer of 7+ years with solid experience in full-stack development, ..., ...</p>
              <p>Get in touch with by <a href="mailto:david@peakwebsites.ca" title="">email</a>, or visit me online:</p>
              <p className="about__social-link"><span className="screen-reader-only">Github</span></p>
              <p className="about__social-link"><span className="screen-reader-only">Stack Overflow</span></p>
-             <p className="about__social-link"><span className="screen-reader-only">Twitter</span></p>
+             <p className="about__social-link"><span className="screen-reader-only">Twitter</span></p>*/}
           </div>
        </section>
 
-       <section id="projects" className="section" hidden>
+       <section id="projects" className="section">
          <h2>Recent Projects</h2>
          <div className="section-container flex-parent">
          {
@@ -57,7 +79,7 @@ export default ({ data }) => {
          </div>
        </section>
 
-       <section id="skillsets" className="section" hidden>
+       <section id="skillsets" className="section">
          <h2>Skillsets</h2>
          <div className="section-container flex-parent">
          {
@@ -123,7 +145,16 @@ export default ({ data }) => {
          </div>
        </section>
 
-       <article id="image-collage"></article>
+       <section className="banner">
+         <div className="section">
+            <h2 className="heading">Get in touch</h2>
+            <p>I'm looking for a great fit with an employer who has vision and a cause.</p>
+            <p>I'm available for 20-25 a week to start and prefer to work remotely.</p>
+            <p>Reach me by phone at <a href="tel:+17785879220">1-778-587-9220</a> or <a href="mailto:david@peakwebsites.ca">email me</a>.</p>
+         </div>
+       </section>
+
+       {/*<article id="image-collage"></article>*/}
 
 
 
