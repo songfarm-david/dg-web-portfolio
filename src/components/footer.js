@@ -6,7 +6,7 @@ import React from "react"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faGithub, faStackOverflow } from '@fortawesome/free-brands-svg-icons'
-import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+// import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => (
 	<footer id="site-footer">

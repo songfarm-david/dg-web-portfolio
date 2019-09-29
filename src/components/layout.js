@@ -24,11 +24,11 @@ const Layout = (props) => {
          }
       }
    `)
-   const { home, name, description } = data.wordpressSiteMetadata
+   const { name } = data.wordpressSiteMetadata
    return (
      <>
-        <div className={props.className}>
-           <Header name={name}/>
+        <div className={ props.className }>
+           <Header name={ name }/>
 
            <main>
               {props.children}
