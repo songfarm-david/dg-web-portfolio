@@ -9,9 +9,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import "../style/global.scss"
+import "../style/styles.scss"
 
 import Header from "./header"
+import Footer from './footer'
 
 const Layout = (props) => {
    const data = useStaticQuery(graphql`
@@ -23,25 +24,17 @@ const Layout = (props) => {
          }
       }
    `)
-   const { home, name, description } = data.wordpressSiteMetadata
-   console.dir(data.wordpressSiteMetadata);
+   const { name } = data.wordpressSiteMetadata
    return (
      <>
-        <div id="bodyTag" className={props.className}>
-           <Header name={name}/>
+        <div className={ props.className }>
+           <Header name={ name }/>
+
            <main>
-              <p>{description}</p>
               {props.children}
            </main>
 
-           {/*<Footer slug={props.slug} />*/}
-           <footer>
-             © {new Date().getFullYear()}, Built with
-             {` `}
-             <a href="https://www.gatsbyjs.org">Gatsby</a>
-           </footer>
-
-           {/*<Modal path={path}/>*/}
+           <Footer />
         </div>
      </>
   )

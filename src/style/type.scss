@@ -1,0 +1,85 @@
+:root {
+
+	--ratio: 1.25;
+	--line-height: var(--ratio);
+
+	font-size: calc(.1vw + 1em); // TODO: re-visit this
+
+	--body-font: 'Heebo', 'Arial', sans-serif;
+	--header-font: 'EB Garamond', 'Times New Roman', serif;
+
+	--s-5: calc(var(--s-4) / var(--ratio));
+	--s-4: calc(var(--s-3) / var(--ratio));
+	--s-3: calc(var(--s-2) / var(--ratio));
+	--s-2: calc(var(--s-1) / var(--ratio));
+	--s-1: calc(var(--s0) / var(--ratio));
+	--s0: 1rem;
+	--negative-project-spacing: -1rem;
+	--s1: calc(var(--s0) * var(--ratio));
+	--s2: calc(var(--s1) * var(--ratio));
+	--s3: calc(var(--s2) * var(--ratio));
+	--s4: calc(var(--s3) * var(--ratio));
+	--s5: calc(var(--s4) * var(--ratio));
+
+	// Vertical spacing article (comprehensive): https://every-layout.dev/layouts/stack/
+	--second-ratio: 1.4;
+	--sec-line-height: var(--second-ratio);
+	--sec-5: calc(var(--sec-4) / var(--second-ratio));
+	--sec-4: calc(var(--sec-3) / var(--second-ratio));
+	--sec-3: calc(var(--sec-2) / var(--second-ratio));
+	--sec-2: calc(var(--sec-1) / var(--second-ratio));
+	--sec-1: calc(var(--sec0) / var(--second-ratio));
+	--sec0: 1rem;
+	--sec1: calc(var(--sec0) * var(--second-ratio));
+	--sec2: calc(var(--sec1) * var(--second-ratio));
+	--sec3: calc(var(--sec2) * var(--second-ratio));
+	--sec4: calc(var(--sec3) * var(--second-ratio));
+	--sec5: calc(var(--sec5) * var(--second-ratio));
+
+}
+
+html,
+body {
+	font-family: var(--header-font);
+}
+
+h1,h2,h3,h4 {
+    line-height: var(--line-height);
+    font-family: var(--header-font);
+    font-weight: 700;
+    hyphens: auto;
+	 margin: var(--s0) 0;
+}
+
+.h1,
+h1 {
+    font-size: var(--s4);
+}
+
+.h2,
+h2 {
+    font-size: var(--s3);
+	 font-weight: initial;
+}
+
+.h3,
+h3 {
+    font-size: var(--s2);
+}
+
+.h4,
+h4 {
+    font-size: var(--s1);
+}
+
+.h5,
+h5,
+p {
+	font-size: var(--s0);
+}
+
+.h6,
+h6 {
+	font-size: var(--s-1);
+
+}

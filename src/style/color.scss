@@ -1,0 +1,25 @@
+:root {
+	--border-thin: 1px;
+	--color-mid: #444;
+	--white-color: #fff;
+	// --color-lightish: #ccc;
+	// --layout-color: #ccc;
+
+	--type-color: #5D6063; // charcoal grey
+	--background-color: #F9FAFB; // blu-airy white
+	--background-color-darker: #e0e2e4;
+	// --hero-color: #484c5e;
+	--hero-color: #4a4f63;
+
+	--gun-metal-blue: #676d87;
+
+	--link-color: #5995DA;
+	--link-visited: #407FC7;
+	--link-hover: #76AEED;
+
+	--alpha-border: rgba(93, 96, 99, .1);
+}
+
+header, footer {
+	background-color: inherit;
+}

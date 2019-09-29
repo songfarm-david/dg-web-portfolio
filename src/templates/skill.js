@@ -1,5 +1,5 @@
 /**
- * Template for WordPress Pages
+ * Template for WordPress Skills
  */
 import React from "react"
 import { graphql } from "gatsby"
@@ -10,7 +10,7 @@ import decodeHTML from '../functions/decode-html.js'
 
 export default function PageTemplate({ data }) {
 	console.log('page data is', data);
-	const { title, content } = data.wordpressPage
+	const { title, content } = data.wordpressWpSkills
 	return (
 		<Layout>
 			<section className="section">
@@ -21,13 +21,15 @@ export default function PageTemplate({ data }) {
 	)
 }
 
-export const pageQuery = graphql`
-	query wp_page($wp_id: Int!) {
-		wordpressPage(wordpress_id: { eq: $wp_id}) {
-			title
-			path
-			slug
-			wordpress_id
+export const skillQuery = graphql`
+	query wp_skill($wp_id: Int!) {
+		wordpressWpSkills(wordpress_id: { eq: $wp_id}) {
+    		wordpress_id
+    		title
+    		path
+    		slug
+    		excerpt
+    		content
   		}
 	}
 `

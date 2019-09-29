@@ -1,3 +1,69 @@
-section {
-	border: 1px solid blue;
+/*
+ * Global styles
+ */
+
+* {
+	box-sizing: border-box;
+}
+
+a:link { color: var(--hero-color) }
+a:visited { color: var(--background-color-dark) }
+a:hover,
+a:visited:hover { color: var(--background-color-darker) }
+
+/* screen reader class */
+.screen-reader-only {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+:after,:before {
+    box-sizing: border-box;
+    background-color: inherit;
+    font: inherit;
+    color: inherit;
+    overflow-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    border: 0 solid
+}
+
+[hidden] {
+    display: none
+}
+
+[hidden]+* {
+    margin-top: 0!important
+}
+
+footer,header,main,nav {
+    display: block
+}
+
+@media (prefers-reduced-motion:no-preference) {
+    :root {
+        scroll-behavior: smooth
+    }
+}
+
+:focus {
+    outline: var(--border-thin) solid var(--color-mid);
+    outline-offset: var(--border-thin)
+}
+
+[tabindex="-1"]:focus {
+    outline: none
+}
+
+noscript {
+    padding: var(--s-1);
+    background-color: var(--color-lightish)
 }

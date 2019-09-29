@@ -1,0 +1,30 @@
+footer#site-footer {
+	text-align: center;
+	padding: var(--s0) 0;
+	box-shadow: 0 -2px 0 var(--alpha-border);
+
+	ul {
+		list-style: none;
+		padding-left: 0;
+		li {
+			padding: var(--s-5);
+			display: inline-block;
+			line-height: inherit;
+			vertical-align: middle;
+			> * {
+				vertical-align: inherit;
+			}
+			> span {
+				margin-left: var(--s-5);
+			}
+			+ li:not(.full-width) {
+				margin-left: var(--s-5);
+			}
+			&.full-width {
+				display: inline-block;
+				width: 100%;
+			}
+		}
+	}
+
+}

@@ -3,14 +3,21 @@
  */
 import React from "react"
 import { graphql } from "gatsby"
+import Layout from "../components/layout"
 
 /* helper function to decode HTML entities from WordPress feed */
-// import decodeHTMLEntities from '../js/utils/decodeHTMLEntities.js'
+import decodeHTML from '../functions/decode-html.js'
 
 export default function PostTemplate({ data }) {
 	console.log('post data is', data);
+	const { title, content } = data.wordpressPost
 	return (
-      <div dangerouslySetInnerHTML={{ __html: data.title}} />
+      <Layout>
+   		<section className="section">
+   			<h2>{decodeHTML(title)}</h2>
+   			<div dangerouslySetInnerHTML={{ __html: (content) ? content : null}} />
+   		</section>
+      </Layout>
 	)
 }
 

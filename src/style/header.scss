@@ -1,0 +1,66 @@
+@import './breakpoints.scss';
+
+header#site-header {
+
+	box-shadow: 0 4px 1px var(--background-color-dark);
+	padding: var(--s-3) var(--s0);
+	text-transform: capitalize;
+
+	&.flex-header {
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+
+		/* align contact information on mobile */
+		.flex-header-item:last-of-type {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		@media (min-width: $mobile-breakpoint) {
+			justify-content: space-between;
+		}
+	}
+
+	.contact-container {
+		.contact-item {
+			padding: var(--s-4);
+			* {
+				line-height: inherit;
+				height: inherit;
+			}
+		&[href^="tel"] {
+				font-family: var(--body-font);
+				// font-size: var(--s-1);
+				text-decoration: none;
+			}
+		}
+	}
+
+	&.fixed-header {
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+	}
+
+	h1 {
+		margin: var(--s-4) 0;
+	}
+
+	h1 {
+		display: inline-block;
+		line-height: inherit;
+	}
+
+	// @media (min-width: $mobile-breakpoint) {
+	// 	position: fixed;
+	// 	height: var(--s4);
+	// 	margin-bottom: 100px;
+	// }
+
+}
