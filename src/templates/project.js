@@ -8,16 +8,28 @@ import Layout from "../components/layout.js"
 /* helper function to decode HTML entities from WordPress feed */
 import decodeHTML from '../functions/decode-html.js'
 
+import '../style/sections/projects.scss'
+
 export default function ProjectTemplate({ data }) {
 	const { title, meta, featured_media, content, taxonomies } = data.wordpressWpProjects
 	let label = 'Technologies used: '
+
+	const isFeaturedMedia = (featured_media) => {
+		if (!featured_media) return
+		return (
+			<img className="featured-image" src={featured_media.source_url} alt={featured_media.alt_text} />
+		)
+	}
+
+	console.log(data);
+
 	return (
 		<Layout>
 			<section className="section">
 				<h2>{decodeHTML(title)}</h2>
-				<span>{meta.project_date}</span>
-				<img src={(featured_media) ? featured_media.source_url : ""} alt="" />
-				<div dangerouslySetInnerHTML={{ __html: content}}/>
+				<span className="date">{meta.project_date}</span>
+				{isFeaturedMedia(featured_media)}
+				<div className="project-content" dangerouslySetInnerHTML={{ __html: content}}/>
 				<div>{
 					taxonomies.map((tech, index) => {
 						if (index === taxonomies.length-1) {
@@ -41,6 +53,8 @@ export const pageQuery = graphql`
 			title
 			meta {
 				project_date
+				site_url
+				github_repo
 			}
 			content
 			taxonomies {

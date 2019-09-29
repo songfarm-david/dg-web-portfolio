@@ -1,6 +1,7 @@
 @import '../breakpoints.scss';
 
 // TODO: import 'section-tiles' styles
+.section,
 .section-container {
 
 	// NOTE: this could be a global class applied to all 'tiles'
@@ -14,13 +15,6 @@
 
 		.heading {
 			margin-bottom: var(--s-4);
-		}
-
-		.date {
-			font-family: var(--header-font);
-			font-style: italic;
-			margin-top: var(--s-4);
-			font-size: var(--s-1);
 		}
 
 		// .main-description {
@@ -53,6 +47,14 @@
 			color: var(--hero-color);
 		}
 
+	}
+
+	.date {
+		display: block;
+		font-family: var(--header-font);
+		font-style: italic;
+		margin-top: var(--s-4);
+		font-size: var(--s-1);
 	}
 
 }
@@ -88,5 +90,15 @@
 		}
 	}
 
+}
 
+/*
+ * Featured image styles in Projects
+ */
+.featured-image {
+	width: 100%;
+	@media (min-width: $mobile-breakpoint) {
+		float: right;
+		max-width: 55%;
+	}
 }
