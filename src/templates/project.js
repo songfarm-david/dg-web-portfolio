@@ -9,7 +9,6 @@ import Layout from "../components/layout.js"
 import decodeHTML from '../functions/decode-html.js'
 
 export default function ProjectTemplate({ data }) {
-	console.log(data);
 	const { title, meta, featured_media, content, taxonomies } = data.wordpressWpProjects
 	let label = 'Technologies used: '
 	return (
@@ -17,7 +16,7 @@ export default function ProjectTemplate({ data }) {
 			<section className="section">
 				<h2>{decodeHTML(title)}</h2>
 				<span>{meta.project_date}</span>
-				<img src={(featured_media.source_url) ? featured_media.source_url : ""} alt="" />
+				<img src={(featured_media) ? featured_media.source_url : ""} alt="" />
 				<div dangerouslySetInnerHTML={{ __html: content}}/>
 				<div>{
 					taxonomies.map((tech, index) => {
@@ -49,6 +48,8 @@ export const pageQuery = graphql`
 			}
 			featured_media {
 				source_url
+				alt_text
+				description
 			}
 		}
 	}

@@ -110,7 +110,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
    // create WordPress Pages and Posts
    allWordpressPage.edges.forEach(({ node }) => {
-      console.log('status page', node.slug)
+      // console.log('status page', node.slug)
       if (node.status == 'publish' && node.type == 'page') {
          createPage({
             path: node.slug,
