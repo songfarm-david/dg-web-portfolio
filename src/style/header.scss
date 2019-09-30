@@ -2,23 +2,16 @@
 
 header#site-header {
 
-	box-shadow: 0 4px 3px var(--background-color-dark);
+	box-shadow: 0 4px 1px var(--background-color-dark);
 	padding: var(--s-3) var(--s0);
 	text-transform: capitalize;
-	color: var(--type-color);
-
-	h1 {
-		display: inline-block;
-		margin: var(--s-4) 0;
-		line-height: var(--line-height);
-		text-transform: inherit;
-	}
 
 	&.flex-header {
 
-		// justify-content: center;
-		// align-items: center;
-		// flex-wrap: wrap;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
 
 		/* align contact information on mobile */
 		.flex-header-item:last-of-type {
@@ -28,7 +21,6 @@ header#site-header {
 		}
 
 		@media (min-width: $mobile-breakpoint) {
-			display: flex;
 			justify-content: space-between;
 		}
 	}
@@ -36,28 +28,18 @@ header#site-header {
 	.contact-container {
 		.contact-item {
 			padding: var(--s-4);
-			font-weight: 300;
-			font-size: var(--s0);
-			text-decoration: none;
-			display: inline-flex;
-			font-family: var(--body-font);
-
 			* {
 				line-height: inherit;
 				height: inherit;
-				color: inherit;
 			}
-			a {
+		&[href^="tel"] {
+				font-family: var(--body-font);
+				// font-size: var(--s-1);
 				text-decoration: none;
-				font-family: inherit;
-				font-size: inherit;
 			}
 		}
 	}
 
-	.button {
-		background-color: var(--background-color-dark);
-	}
 	&.fixed-header {
 		width: 100%;
 		position: fixed;
@@ -66,7 +48,14 @@ header#site-header {
 		z-index: 1000;
 	}
 
+	h1 {
+		margin: var(--s-4) 0;
+	}
 
+	h1 {
+		display: inline-block;
+		line-height: inherit;
+	}
 
 	// @media (min-width: $mobile-breakpoint) {
 	// 	position: fixed;

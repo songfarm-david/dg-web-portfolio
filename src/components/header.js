@@ -9,8 +9,8 @@ const Header = () => (
          <h1 className="h2">David Gaskin - Full-stack developer</h1>
       </div>
       <div className="flex-header-item contact-container">
-         <a href="tel:+17785879220" title="Call me" className="contact-item button">+1 (778) 587-9220</a>
-         <a href="mailto:david@peakwebsites.ca" title="Email me" className="contact-item button"><FontAwesomeIcon fixedWidth size="1x" icon={faEnvelope} />&nbsp;Email</a>
+         <a href="tel:+17785879220" title="Call me" className="contact-item">+1 (778) 587-9220</a>
+         <a href="mailto:david@peakwebsites.ca" title="Email me" className="contact-item"><FontAwesomeIcon fixedWidth size="1x" icon={faEnvelope} /></a>
       </div>
   </header>
 )

@@ -1,20 +1,6 @@
 /*
- * Global Site styles
- *
- * Sept. 2019
- * Author: Dave Gaskin
+ * Global styles
  */
-:root {
-	--box-shadow-theme: 0px 2px 1px 1px var(--box-shadow);
-}
-
-/* add bottom margin to some pages */
-.project-page main,
-.skill-page main {
-	> .section:last-child {
-		margin-bottom: var(--s4);
-	}
-}
 
 * {
 	box-sizing: border-box;
@@ -24,16 +10,6 @@ a:link { color: var(--hero-color) }
 a:visited { color: var(--background-color-dark) }
 a:hover,
 a:visited:hover { color: var(--background-color-darker) }
-
-/* theme button */
-.button {
-   text-align: center;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding: var(--s-3);
-   text-decoration: none;
-}
 
 /* screen reader class */
 .screen-reader-only {
