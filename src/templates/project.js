@@ -8,6 +8,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 
 import '../style/projects/projects.scss'
+
 /* helper function to decode HTML entities from WordPress feed */
 import decodeHTML from '../functions/decode-html.js'
 
@@ -63,7 +64,7 @@ export default function ProjectTemplate({ data }) {
 			<div className="section">
 				<Link to="/" title="Home">Go back</Link>
 			</div>
-			
+
 		</Layout>
 
 	)

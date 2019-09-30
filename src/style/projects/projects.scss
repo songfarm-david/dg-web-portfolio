@@ -1,0 +1,45 @@
+/*
+ * Styles for Projects
+ *
+ * Sept. 2019
+ * Author: Dave Gaskin
+ */
+
+@import '../breakpoints.scss';
+
+.project {
+
+	// .main-description {
+	// 	font-family: var(--body-font);
+	// 	font-size: var(--s-1);
+	// 	p {
+	// 		font-size: inherit;
+	// 	}
+	// }
+
+	.project-link {
+		color: var(--hero-color);
+		padding: var(--s-5);
+		* {
+			color: inherit;
+		}
+		&:hover {
+			cursor: pointer;
+			color: var(--background-color-darker);
+		}
+	}
+
+}
+
+/*
+ * Featured image styles in Projects
+ */
+.featured-image {
+	width: 100%;
+	box-shadow: var(--box-shadow-theme);
+	@media (min-width: $mobile-breakpoint) {
+		float: right;
+		max-width: 55%;
+		margin-left: var(--project-spacing);
+	}
+}
