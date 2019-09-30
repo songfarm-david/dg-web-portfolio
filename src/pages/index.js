@@ -36,7 +36,7 @@ export default ({ data }) => {
              <p>Hi, I'm David (but you can just call me Dave).</p>
              <p>I'm a full-stack developer and creative problem-solver who likes to think outside of the box.</p>
              <p>I'm hoping to find an exciting new opportunity with a team that wants to succeed in building something great!</p>
-             <p>If you think I might be a match, please reach out to me by <a href="">phone</a> or <a href="">email</a>.</p>
+             <p>If you think I might be a match, please reach out to me by <a href="tel:+17785879220" title="Call me">phone</a> or <a href="mailto:david@peakwebsites.ca" title="Email me">email</a>.</p>
              <p>Thanks for visiting :)</p>
           </div>
        </section>
