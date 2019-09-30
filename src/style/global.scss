@@ -2,6 +2,10 @@
  * Global styles
  */
 
+:root {
+	--box-shadow-theme: 0px 2px 3px rgba(16, 16, 16, .1)
+}
+
 * {
 	box-sizing: border-box;
 }
