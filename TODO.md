@@ -3,6 +3,7 @@
 * add project links in 'Recent Projects' section
 * test deploy on netlify
 * update field on cyber coders
+* complete SEO components of website
 
 # full theme notes (finalized version)
 * add 'skip to main content' link

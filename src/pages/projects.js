@@ -1,19 +1,27 @@
+// NOTE: This page is a good example of a finalized page/section of the site. Review it's Layout className and SEO component format. Then delete this note! 09/29/2019
+
 /*
- * Index page for Projects
+ * Page for showing all projects
+ * Sept. 2019
+ *
+ * Author: Dave Gaskin
  */
+
 import React from "react"
-import { graphql } from "gatsby"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
-// import Image from "../components/image"
 import SEO from "../components/seo"
 
 export default ({ data }) => {
-	console.log(data.allWordpressWpProjects);
+	// console.log(data.allWordpressWpProjects);
 	return (
-		<Layout className="">
-			<SEO title="Projects" />
+		<Layout className="all-projects-page">
+
+			<SEO
+				title="All Projects"
+				/>
+
 			<section>
            <h3>Pages</h3>
            {data.allWordpressWpProjects.edges.map(({ node }, index) => (

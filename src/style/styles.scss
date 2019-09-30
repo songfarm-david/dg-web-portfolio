@@ -1,10 +1,15 @@
-/*
- * Compiles all site styles
- */
-
+ /*
+  * This page is loaded from the Layout component
+  * It combines all basic site styles
+  *
+  * Sept. 2019
+  * Author: Dave Gaskin
+  */
 @import 'type';
 @import 'color';
 @import 'global';
 @import 'layout';
 @import 'header';
 @import 'footer';
+@import 'sections/sections';
+@import 'sections/banner';

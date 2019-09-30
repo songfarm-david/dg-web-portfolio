@@ -1,19 +1,15 @@
+/*
+ * Basic Layout styles (multi-page)
+ *
+ * Sept. 2019
+ * Author: Dave Gaskin
+ */
+
 @import 'breakpoints.scss';
 
-:root {
-	--project-spacing: var(--s-1);
-}
-
-body > div .section + .section,
+.section + .section,
 .section * + * {
-	margin-top: var(--s-1);
-}
-
-body {
-	padding: 0;
-	margin: 0;
-	background-color: var(--background-color);
-	color: var(--type-color);
+	margin-top: var(--project-spacing);
 }
 
 header#site-header,
@@ -21,90 +17,9 @@ footer#site-footer {
 	background-color: var(--white-color);
 }
 
-/*  general sections */
-.section {
-
-	padding: var(--project-spacing);
-	width: 100%;
-	margin: 0 auto;
-
-	@media (min-width: 1024px) {
-		width: 64vw;
-	}
-
-	&.section-extended {
-		border-left: 4px solid var(--white-color);
-
-		@media (min-width: 1024px) {
-			width: 77vw;
-		}
-	}
-
-}
-
-.banner {
-	width: 100%;
-	padding: var(--s1) var(--s0);
-
-	background-color: var(--hero-color);
-	color: var(--white-color);
-	font-family: var(--body-font);
-
-	font-size: var(--s1);
-	line-height: var(--sec-line-height);
-	font-weight: 100;
-
-	.heading {
-		font-family: inherit;
-		text-transform: capitalize;
-		font-weight: bolder;
-	}
-
-	p, p > a, p > a * {
-		font-family: inherit;
-		font-size: inherit;
-		line-height: inherit;
-		color: inherit;
-	}
-
-	.button {
-		text-align: center;
-		background-color: var(--gun-metal-blue);
-		color: var(--white-color);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding: var(--s-3);
-		text-decoration: none;
-		// max-width: 33vw;
-	}
-
-	@media (min-width: $mobile-breakpoint) {
-		font-size: var(--s2);
-		&.banner-small {
-			font-size: var(--s1);
-		}
-	}
-
-	.cta-container {
-		display: flex;
-		flex-wrap: wrap;
-		margin-bottom: var(--project-spacing);
-		a {
-			width: 100%;
-			flex: 1 1 auto;
-		}
-		@media (min-width: $mobile-breakpoint) {
-			flex-wrap: nowrap;
-			a { width: 45% }
-			a:first-of-type {
-				margin-right: var(--project-spacing);
-			}
-			a + a {
-				margin-top: 0;
-			}
-		}
-
-	}
-
+body {
+	padding: 0;
+	margin: 0;
+	background-color: var(--background-color);
+	color: var(--type-color);
 }

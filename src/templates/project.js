@@ -1,19 +1,24 @@
-/**
- * Template for Project Posts
+/*
+ * Page for showing all projects
+ *
+ * Sept. 2019
+ * Author: Dave Gaskin
  */
 import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout.js"
+import { graphql, Link } from "gatsby"
 
+import '../style/projects/projects.scss'
 /* helper function to decode HTML entities from WordPress feed */
 import decodeHTML from '../functions/decode-html.js'
 
-import '../style/sections/projects.scss'
+import Layout from "../components/layout.js"
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 
 export default function ProjectTemplate({ data }) {
-	const { title, meta, featured_media, content, taxonomies } = data.wordpressWpProjects
-	let label = 'Technologies used: '
 
+	// returns HTML for project image, if it exists
 	const isFeaturedMedia = (featured_media) => {
 		if (!featured_media) return
 		return (
@@ -21,27 +26,44 @@ export default function ProjectTemplate({ data }) {
 		)
 	}
 
-	console.log(data);
+	const {
+		title,
+		meta,
+		featured_media,
+		content,
+		taxonomies } = data.wordpressWpProjects
 
 	return (
-		<Layout>
+		<Layout className="project-page">
+
+			<div className="banner home-link">
+				<div className="section">
+					<Link to="/" title="Home"><FontAwesomeIcon fixedWidth size="1x" icon={faHome} />Home</Link>
+				</div>
+			</div>
+
 			<section className="section">
 				<h2>{decodeHTML(title)}</h2>
 				<span className="date">{meta.project_date}</span>
 				{isFeaturedMedia(featured_media)}
 				<div className="project-content" dangerouslySetInnerHTML={{ __html: content}}/>
-				<div>{
+				<div className="project-tech-container sub-section">{
 					taxonomies.map((tech, index) => {
 						if (index === taxonomies.length-1) {
-							return <span key={index} className="project_tech" dangerouslySetInnerHTML={{ __html: label + tech.name }} />
+							return <span key={index} className="project-tech" dangerouslySetInnerHTML={{ __html: tech.name }} />
 						}
 						return (
-							<span key={index} className="project_tech" dangerouslySetInnerHTML={{ __html: label + tech.name + ", " }} />
+							<span key={index} className="project-tech" dangerouslySetInnerHTML={{ __html: tech.name + ", " }} />
 						)
 					})
 				}
 				</div>
 			</section>
+
+			<div className="section">
+				<Link to="/" title="Home">Go back</Link>
+			</div>
+			
 		</Layout>
 
 	)
