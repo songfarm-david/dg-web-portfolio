@@ -28,16 +28,17 @@ import {
 export default ({ data }) => {
    return (
      <Layout className="index-page">
-       <SEO title="Portfolio Home" />
+
+       <SEO
+         title="David Gaskin - Portfolio Home"
+         />
 
        <section id="about" className="banner">
           <div className="section">
              <h2 className="screen-reader-only">About</h2>
              <p>Hi, I'm David (but you can just call me Dave).</p>
-             <p>I'm a full-stack developer and creative problem-solver who likes to think outside of the box, and I'm hoping to find an exciting new opportunity building something cool!</p>
+             <p>I'm a full-stack developer and creative problem-solver who likes to think outside of the box. I want to be part of an exciting team and contribute to its success!</p>
              <p>I'm 34 and I currently live in Victoria, British Columbia.</p>
-             {/*<p>If you think I might be a match, please reach out to me by <a href="tel:+17785879220" title="Call me">phone</a> or <a href="mailto:david@peakwebsites.ca" title="Email me">email</a>.</p>*/}
-             <p>Thanks for stopping by!</p>
           </div>
        </section>
 
@@ -46,7 +47,6 @@ export default ({ data }) => {
          <div className="section-container flex-parent">
          {
             data.allWordpressWpProjects.edges.map(({ node }, index ) => {
-               // console.log(node);
                return (
                   <>
                      <div key={index} className="project section-item flex-item">
@@ -86,7 +86,6 @@ export default ({ data }) => {
          <div className="section-container flex-parent">
          {
             data.allWordpressWpSkills.edges.map(( {node}, index ) => {
-               console.log(node);
                const { title, excerpt, slug } = node
                return (
                   <article key={index} className="section-item flex-item">
@@ -151,8 +150,7 @@ export default ({ data }) => {
 
        <section className="banner">
          <div className="section">
-            <h2 className="heading">Think I'm A Good Fit?</h2>
-            <p>Get in touch.</p>
+            <h2 className="heading">Contact Me</h2>
             <div className="cta-container">
             <a href="tel:+17785879220" title="Call me" className="button">
                <FontAwesomeIcon fixedWidth size="1x" icon={faPhone} />&nbsp;+1 (778) 587-9220

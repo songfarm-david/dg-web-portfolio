@@ -1,8 +1,8 @@
 
 # TODO
-* add project links in 'Recent Projects' section
-* test deploy on netlify
-* update field on cyber coders
+1. Combine in Skillsets "Copywring" and "SEO" into the same category, add one for Git (SVN), project flow/process, build tools
+2. Put individual skillsets points (in Skillsets) into markdowm pages so you can import them more modularly.
+3. Add 'Work Experience' sections
 
 # full theme notes (finalized version)
 * add 'skip to main content' link
