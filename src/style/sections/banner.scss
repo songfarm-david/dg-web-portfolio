@@ -41,13 +41,18 @@
 	}
 
 	.button {
+		text-align: center;
 		background-color: var(--gun-metal-blue);
 		color: var(--white-color);
-		// max-width: 33vw;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: var(--s-3);
+		text-decoration: none;
 	}
 
 	@media (min-width: $mobile-breakpoint) {
-		font-size: var(--s2);
+		font-size: var(--s1);
 		&.banner-small {
 			font-size: var(--s1);
 		}
