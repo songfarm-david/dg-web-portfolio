@@ -79,17 +79,13 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
          fonts: [
-            {
-               family: 'EB Garamond'
-            },
-            {
-               family: 'Heebo',
-               variants: ['100','200','300']
-            }
+            'EB Garamond',
+            'Heebo\:100,200,300'
          ],
+         display: 'swap'
       },
     },
     // {

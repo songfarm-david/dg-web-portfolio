@@ -48,6 +48,7 @@ export default ({ data }) => {
          <div className="section-container flex-parent">
          {
             data.allWordpressWpProjects.edges.map(({ node }, index ) => {
+                console.log(node.meta.site_url === "")
                return (
                   <>
                      <div key={index} className="project section-item flex-item">
@@ -56,9 +57,10 @@ export default ({ data }) => {
 
                         <div dangerouslySetInnerHTML={{ __html: node.excerpt }} className="main-description"/>
 
-                        <a href={node.meta.site_url} title="Go to site URL" className="project-link">
+                        {node.meta.site_url !== "" && 
+                        (<a href={node.meta.site_url} title="Go to site URL" className="project-link">
                            <FontAwesomeIcon fixedWidth size="1x" icon={faLink} />
-                        </a>
+                        </a>)}
                         <a href={node.meta.github_repo} title="See Github Repo" className="project-link">
                            <FontAwesomeIcon fixedWidth size="1x" icon={faGithub} />
                         </a>
