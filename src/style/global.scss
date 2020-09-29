@@ -3,7 +3,7 @@
  */
 
 :root {
-	--box-shadow-theme: 0px 2px 3px rgba(16, 16, 16, .1)
+	--box-shadow-theme: 0px 2px 3px rgba(16, 16, 16, .1);
 }
 
 * {
@@ -37,37 +37,37 @@ a:visited:hover { color: var(--background-color-darker) }
     overflow-wrap: break-word;
     margin: 0;
     padding: 0;
-    border: 0 solid
+    border: 0 solid;
 }
 
 [hidden] {
-    display: none
+    display: none;
 }
 
 [hidden]+* {
-    margin-top: 0!important
+    margin-top: 0!important;
 }
 
 footer,header,main,nav {
-    display: block
+    display: block;
 }
 
 @media (prefers-reduced-motion:no-preference) {
     :root {
-        scroll-behavior: smooth
+        scroll-behavior: smooth;
     }
 }
 
 :focus {
     outline: var(--border-thin) solid var(--color-mid);
-    outline-offset: var(--border-thin)
+    outline-offset: var(--border-thin);
 }
 
 [tabindex="-1"]:focus {
-    outline: none
+    outline: none;
 }
 
 noscript {
     padding: var(--s-1);
-    background-color: var(--color-lightish)
+    background-color: var(--color-lightish);
 }
