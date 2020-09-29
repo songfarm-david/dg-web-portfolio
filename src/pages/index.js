@@ -36,9 +36,10 @@ export default ({ data }) => {
        <section id="about" className="banner">
           <div className="section">
              <h2 className="screen-reader-only">About</h2>
-             <p>Hi, I'm David (but you can just call me Dave).</p>
-             <p>I'm a full-stack developer and creative problem-solver who likes to think outside of the box. I want to be part of an exciting team and contribute to its success!</p>
-             <p>I'm 34 and I currently live in Victoria, British Columbia.</p>
+             <p>Hi, I'm Dave. I'm 35 yrs old and currently live in Victoria, British Columbia.</p>
+             <p>I'm a self-directed, self-taught front-end/full-stack developer with experience building performant, modular, and agile websites and web applications.</p>
+             <p>Some of my strengths include my attention to detail and commitment to a high standard of excellence.</p>
+             <p>Please read on to learn more about my abilities and experience.</p>
           </div>
        </section>
 
@@ -105,34 +106,34 @@ export default ({ data }) => {
             <div className="flex-item section-item">
                <h4>Languages</h4>
                <ul>
-                  <li>HTML/5 <small>(7 yrs)</small></li>
-                  <li>CSS/3 <small>(7 yrs)</small></li>
-                  <li>JavaScript/JavaScript ES6 <small>(7 yrs)</small></li>
-                  <li>JSON <small>(6 yrs)</small></li>
-                  <li>jQuery <small>(7 yrs)</small></li>
+                  <li>HTML/5 <small>(8 yrs)</small></li>
+                  <li>CSS/3 <small>(8 yrs)</small></li>
+                  <li>SASS/LESS <small>(7 yrs)</small></li>
+                  <li>JavaScript/JavaScript ES6 <small>(8 yrs)</small></li>
+                  <li>JSON <small>(7 yrs)</small></li>
+                  {/* <li>jQuery <small>(7 yrs)</small></li> */}
                   <li>PHP <small>(7 yrs)</small></li>
-                  <li>SASS/LESS <small>(5 yrs)</small></li>
                </ul>
             </div>
             <div className="flex-item section-item">
                <h4>Frameworks</h4>
                <ul>
-                  <li>WordPress REST API <small>(1 yr)</small></li>
-                  <li>ReactJS <small>(2 yrs)</small></li>
-                  <li>GatsbyJS <small>(2 yrs)</small></li>
-                  <li>Webpack <small>(2 yrs)</small></li>
-                  <li>Node.js/NPM <small>(4 yrs)</small></li>
-                  <li>Git <small>(5 yrs)</small></li>
-                  <li>Bootstrap <small>(5 yrs)</small></li>
+                  <li>WordPress REST API <small>(4 yr)</small></li>
+                  <li>ReactJS <small>(4 yrs)</small></li>
+                  <li>GatsbyJS <small>(3 yrs)</small></li>
+                  {/* <li>Webpack <small>(2 yrs)</small></li> */}
+                  <li>Node.js/NPM <small>(3 yrs)</small></li>
+                  <li>Git <small>(6 yrs)</small></li>
+                  <li>Bootstrap <small>(3 yrs)</small></li>
                </ul>
             </div>
             <div className="flex-item section-item">
                <h4>Databases</h4>
                <ul>
-                  <li>GraphQL <small>(1 yr)</small></li>
-                  <li>IndexedDB <small>(2 yrs)</small></li>
+                  <li>GraphQL <small>(3 yr)</small></li>
+                  <li>IndexedDB <small>(1 yrs)</small></li>
                   <li>LocalStorage <small>(2 yrs)</small></li>
-                  <li>MySQL/PHPMyAdmin <small>(5 yrs)</small></li>
+                  <li>MySQL/PHPMyAdmin <small>(6 yrs)</small></li>
                </ul>
             </div>
             <div className="flex-item section-item">
@@ -140,9 +141,9 @@ export default ({ data }) => {
                <ul>
                   <li>REST APIs <small>(3 yrs)</small></li>
                   <li>Modular Design <small>(3 yrs)</small></li>
-                  <li>WAI-ARIA (Web Accessibility) <small>(5 yrs)</small></li>
-                  <li>Object-Oriented Programming <small>(5 yrs)</small></li>
-                  <li>Responsive Design <small>(6 yrs)</small></li>
+                  <li>WAI-ARIA (Web Accessibility) <small>(4 yrs)</small></li>
+                  <li>Object-Oriented Programming <small>(2 yrs)</small></li>
+                  <li>Responsive Design <small>(7 yrs)</small></li>
                </ul>
             </div>
          </div>

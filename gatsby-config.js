@@ -46,7 +46,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-         baseUrl: `peakwebsites.ca/`,
+         baseUrl: `cms.peakwebsites.ca/`,
          protocol: `http`,
          hostingWPCOM: false,
          verboseOutput: true,
