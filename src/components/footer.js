@@ -16,11 +16,11 @@ const Footer = () => (
 			<li className="full-width"><FontAwesomeIcon fixedWidth size="1x" icon={faEnvelope} /><span>david@peakwebsites.ca</span></li>*/}
 			<li><a href="https://stackoverflow.com/users/2909732/david-gaskin?tab=profile" target="_blank"><FontAwesomeIcon fixedWidth size="1x" icon={faStackOverflow} /></a></li>
 			<li><a href="https://github.com/songfarm-david/" target="_blank"><FontAwesomeIcon fixedWidth size="1x" icon={faGithub} /></a></li>
-            <li><a href="https://twitter.com/peakwebsite" target="blank"><FontAwesomeIcon fixedWidth size="1x" icon={faTwitter} /></a></li>
+            <li><a href="https://twitter.com/peakwebsite" target="_blank"><FontAwesomeIcon fixedWidth size="1x" icon={faTwitter} /></a></li>
 		</ul>
 		<small>© {new Date().getFullYear()}, Built with
 		{` `}
-		<a href="https://www.gatsbyjs.org">Gatsby</a></small>
+		<a href="https://www.gatsbyjs.org" target="_blank">Gatsby</a></small>
 	</footer>
 )
 
