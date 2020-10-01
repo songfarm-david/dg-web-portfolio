@@ -133,7 +133,7 @@ export default ({ data }) => {
                <h4>Databases</h4>
                <ul>
                   <li>GraphQL <small>(3 yr)</small></li>
-                  <li>IndexedDB <small>(1 yrs)</small></li>
+                  <li>IndexedDB <small>(1 yr)</small></li>
                   <li>LocalStorage <small>(2 yrs)</small></li>
                   <li>MySQL/PHPMyAdmin <small>(6 yrs)</small></li>
                </ul>
@@ -141,8 +141,8 @@ export default ({ data }) => {
             <div className="flex-item section-item">
                <h4>Methodologies</h4>
                <ul>
-                  <li>REST APIs <small>(3 yrs)</small></li>
-                  <li>Modular Design <small>(3 yrs)</small></li>
+                  <li>REST APIs <small>(4 yrs)</small></li>
+                  <li>Modular Design <small>(4 yrs)</small></li>
                   <li>WAI-ARIA (Web Accessibility) <small>(4 yrs)</small></li>
                   <li>Object-Oriented Programming <small>(2 yrs)</small></li>
                   <li>Responsive Design <small>(7 yrs)</small></li>
